@@ -1,0 +1,10 @@
+<Modules>
+  <Module PersistentId="03A28DF6-D633-4E33-A3E6-64E596922C03" ModuleId="F1Speed.Tests" />
+  <Module PersistentId="6A21F736-434E-4728-9AF6-E3821441CF4D" ModuleId="F1Speed" />
+  <Module PersistentId="265741B0-30F4-4E28-A054-BAEE3F6B3A52" ModuleId="F1Speed.Core" />
+  <Module PersistentId="F711113F-6058-4EBB-AA7A-884A31BCF1A8" ModuleId="F1Speed.Schema" />
+  <Module PersistentId="583457A7-2316-43CF-857E-867F198CCC1E" ModuleId="F1Speed.Service" />
+  <Module PersistentId="9AA4EAE7-B518-45E2-9F10-F198AB6E653D" ModuleId="F1Speed.Service.Tests" />
+  <Module PersistentId="969486F0-2867-4FB8-A05F-64DC7EEE9EFF" ModuleId="F1Speed.Service.Model" />
+  <Module PersistentId="7DAD0BBE-3165-4AD0-86E4-BB78AABAE0EB" ModuleId="F1Speed.Service.Model_1" />
+</Modules>

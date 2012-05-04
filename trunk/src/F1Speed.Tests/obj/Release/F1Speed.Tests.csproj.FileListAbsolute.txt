@@ -1,0 +1,11 @@
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\F1Speed.Tests.dll
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\F1Speed.Tests.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\F1Speed.Core.dll
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\NUnit.Framework.dll
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\Rhino.Mocks.dll
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\F1Speed.Core.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\NUnit.Framework.xml
+D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\Rhino.Mocks.xml
+D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\ResolveAssemblyReference.cache
+D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\F1Speed.Tests.dll
+D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\F1Speed.Tests.pdb

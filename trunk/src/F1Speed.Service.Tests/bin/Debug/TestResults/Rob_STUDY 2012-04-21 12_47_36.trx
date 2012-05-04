@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="4e44f4ad-c2dc-4b92-9d10-1f3349f27cf3" name="Rob@STUDY 2012-04-21 12:47:36" runUser="Study\Rob" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="858c7d0c-65d3-48fc-80ea-ec7f2875e792">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Rob_STUDY 2012-04-21 12_47_36" />
+  </TestSettings>
+  <Times creation="2012-04-21T12:47:36.6855813+10:00" queuing="2012-04-21T12:47:37.0443819+10:00" start="2012-04-21T12:47:37.1691821+10:00" finish="2012-04-21T12:47:38.8539851+10:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Can_retrieve_lap_from_database" storage="d:\source\f1speed\trunk\src\f1speed.service.tests\bin\debug\f1speed.service.tests.dll" id="9977738c-8820-8a4f-2e56-01d835b186d4">
+      <Execution timeOut="1800000" id="3e137af6-4f5f-4d47-bc0e-8218552820bc" />
+      <TestMethod codeBase="D:/source/F1Speed/trunk/src/F1Speed.Service.Tests/bin/Debug/F1Speed.Service.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="F1Speed.Service.Tests.LapFixture, F1Speed.Service.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_retrieve_lap_from_database" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9977738c-8820-8a4f-2e56-01d835b186d4" executionId="3e137af6-4f5f-4d47-bc0e-8218552820bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3e137af6-4f5f-4d47-bc0e-8218552820bc" testId="9977738c-8820-8a4f-2e56-01d835b186d4" testName="Can_retrieve_lap_from_database" computerName="STUDY" duration="00:00:01.4297414" startTime="2012-04-21T12:47:37.2471823+10:00" endTime="2012-04-21T12:47:38.7915850+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3e137af6-4f5f-4d47-bc0e-8218552820bc">
+      <Output>
+        <Exception>Exception has been thrown by the target of an invocation.</Exception>
+        <StdOut>An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.</StdOut>
+        <ErrorInfo>
+          <Message>Unable to create instance of class F1Speed.Service.Tests.LapFixture. Error: System.NullReferenceException: Object reference not set to an instance of an object..</Message>
+          <StackTrace>    at F1Speed.Service.Tests.InMemoryDatabase..ctor() in D:\source\F1Speed\trunk\src\F1Speed.Service.Tests\InMemoryDatabase.cs:line 21
+   at F1Speed.Service.Tests.InMemoryData..ctor() in D:\source\F1Speed\trunk\src\F1Speed.Service.Tests\InMemoryData.cs:line 10
+   at F1Speed.Service.Tests.LapFixture..ctor()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

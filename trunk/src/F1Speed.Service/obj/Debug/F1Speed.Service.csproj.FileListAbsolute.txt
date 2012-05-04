@@ -1,0 +1,17 @@
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\F1Speed.Service.dll.config
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\F1Speed.Service.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\F1Speed.Service.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\Castle.Core.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\F1Speed.Service.Model.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\FluentNHibernate.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\Iesi.Collections.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\NHibernate.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\F1Speed.Service.Model.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\Castle.Core.xml
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\FluentNHibernate.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\Iesi.Collections.pdb
+D:\source\F1Speed\trunk\src\F1Speed.Service\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\source\F1Speed\trunk\src\F1Speed.Service\obj\Debug\ResolveAssemblyReference.cache
+D:\source\F1Speed\trunk\src\F1Speed.Service\obj\Debug\F1Speed.Service.dll
+D:\source\F1Speed\trunk\src\F1Speed.Service\obj\Debug\F1Speed.Service.pdb

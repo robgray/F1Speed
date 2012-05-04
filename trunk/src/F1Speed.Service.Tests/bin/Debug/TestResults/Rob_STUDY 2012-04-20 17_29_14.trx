@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="2ae527fa-f036-41c0-a385-192a9f7d9e82" name="Rob@STUDY 2012-04-20 17:29:14" runUser="Study\Rob" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="f18793b7-3e17-4de2-8f17-3e5f1147e404">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Rob_STUDY 2012-04-20 17_29_14" />
+  </TestSettings>
+  <Times creation="2012-04-20T17:29:14.7882040+10:00" queuing="2012-04-20T17:29:15.1582252+10:00" start="2012-04-20T17:29:15.2872326+10:00" finish="2012-04-20T17:29:15.7592596+10:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="STUDY" outcome="Warning" timestamp="2012-04-20T17:29:15.0552193+10:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Antlr3.Runtime' directly or indirectly referenced by the test container 'd:\source\f1speed\trunk\src\f1speed.service.tests\bin\debug\f1speed.service.tests.dll' was not found.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Can_retrieve_lap_from_database" storage="d:\source\f1speed\trunk\src\f1speed.service.tests\bin\debug\f1speed.service.tests.dll" id="9977738c-8820-8a4f-2e56-01d835b186d4">
+      <Execution timeOut="1800000" id="5a63dafb-9391-4879-a17b-b613cf0eae68" />
+      <TestMethod codeBase="D:/source/F1Speed/trunk/src/F1Speed.Service.Tests/bin/Debug/F1Speed.Service.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="F1Speed.Service.Tests.LapFixture, F1Speed.Service.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_retrieve_lap_from_database" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9977738c-8820-8a4f-2e56-01d835b186d4" executionId="5a63dafb-9391-4879-a17b-b613cf0eae68" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5a63dafb-9391-4879-a17b-b613cf0eae68" testId="9977738c-8820-8a4f-2e56-01d835b186d4" testName="Can_retrieve_lap_from_database" computerName="STUDY" duration="00:00:00.2544814" startTime="2012-04-20T17:29:15.3502362+10:00" endTime="2012-04-20T17:29:15.7132569+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a63dafb-9391-4879-a17b-b613cf0eae68">
+      <Output>
+        <Exception>Exception has been thrown by the target of an invocation.</Exception>
+        <ErrorInfo>
+          <Message>Unable to create instance of class F1Speed.Service.Tests.LapFixture. Error: FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---&gt; FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---&gt; System.InvalidOperationException: Tried to add property 'LateralAcceleration' when already added..</Message>
+          <StackTrace>    at FluentNHibernate.MappingModel.MappedMembers.AddProperty(PropertyMapping property)
+   at FluentNHibernate.Mapping.ClassMap`1.FluentNHibernate.IMappingProvider.GetClassMapping()
+   at FluentNHibernate.PersistenceModel.BuildSeparateMappings(Action`1 add)
+   at FluentNHibernate.PersistenceModel.BuildMappings()
+   at FluentNHibernate.PersistenceModel.EnsureMappingsBuilt()
+   at FluentNHibernate.PersistenceModel.Configure(Configuration cfg)
+   at FluentNHibernate.Cfg.FluentMappingsContainer.Apply(Configuration cfg)
+   at FluentNHibernate.Cfg.MappingConfiguration.Apply(Configuration cfg)
+   at FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+ --- End of inner exception stack trace ---
+    at FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   at FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+ --- End of inner exception stack trace ---
+    at FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   at F1Speed.Service.Tests.InMemoryDatabase.CreateSessionFactory() in D:\source\F1Speed\trunk\src\F1Speed.Service.Tests\InMemoryDatabase.cs:line 28
+   at F1Speed.Service.Tests.InMemoryDatabase..ctor() in D:\source\F1Speed\trunk\src\F1Speed.Service.Tests\InMemoryDatabase.cs:line 20
+   at F1Speed.Service.Tests.InMemoryData..ctor() in D:\source\F1Speed\trunk\src\F1Speed.Service.Tests\InMemoryData.cs:line 10
+   at F1Speed.Service.Tests.LapFixture..ctor()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

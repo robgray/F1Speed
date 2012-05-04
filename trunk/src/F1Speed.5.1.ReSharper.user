@@ -1,0 +1,962 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9AA4EAE7-B518-45E2-9F10-F198AB6E653D/f:InMemoryDatabase.cs" caret="1559" fromTop="31" />
+      <File id="583457A7-2316-43CF-857E-867F198CCC1E/f:App.config" caret="0" fromTop="0" />
+      <File id="9AA4EAE7-B518-45E2-9F10-F198AB6E653D/f:LapFixture.cs" caret="335" fromTop="3" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:PacketUtilities.cs" caret="0" fromTop="0" />
+      <File id="03A28DF6-D633-4E33-A3E6-64E596922C03/f:ExtensionsFixture.cs" caret="372" fromTop="17" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.Designer.cs" caret="655" fromTop="3" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:OptionsForm.Designer.cs" caret="556" fromTop="16" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Program.cs" caret="496" fromTop="21" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:CsvTelemetryLapRepository.cs" caret="2891" fromTop="0" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:FileSystemFacade.cs" caret="0" fromTop="0" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:IFileSystemFacade.cs" caret="0" fromTop="0" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:ITelemetryLapRepository.cs" caret="0" fromTop="0" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:TelemetryLapRepository.cs" caret="837" fromTop="27" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:Extensions.cs" caret="228" fromTop="10" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryPacket.cs" caret="0" fromTop="0" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:F1SpeedSettings.cs" caret="603" fromTop="13" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:OptionsForm.cs" caret="707" fromTop="25" />
+      <File id="03A28DF6-D633-4E33-A3E6-64E596922C03/f:TelemetryLapHelper.cs" caret="0" fromTop="0" />
+      <File id="03A28DF6-D633-4E33-A3E6-64E596922C03/f:TelemetryLapManagerFixture.cs" caret="691" fromTop="19" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:F1PerfViewTelemetryLapRepository.cs" caret="5373" fromTop="20" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="1028" fromTop="36" />
+      <File id="03A28DF6-D633-4E33-A3E6-64E596922C03/f:TelemetryLapFixture.cs" caret="2066" fromTop="27" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:Logging.cs" caret="1713" fromTop="51" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:BinaryTelemetryLapRepository.cs" caret="1878" fromTop="22" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:XmlTelemetryLapRepository.cs" caret="1886" fromTop="24" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="8097" fromTop="20" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/d:Properties/f:app.manifest" caret="742" fromTop="10" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/d:Properties/f:AssemblyInfo.cs" caret="1476" fromTop="35" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Properties/f:AssemblyInfo.cs" caret="769" fromTop="17" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.cs" caret="10929" fromTop="18" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:F1SpeedSettings.cs" caret="522" fromTop="15" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:F1SpeedSettings.cs" caret="1420" fromTop="25" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:F1SpeedSettings.cs" caret="3077" fromTop="51" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:OptionsForm.cs" caret="707" fromTop="25" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:OptionsForm.cs" caret="1018" fromTop="33" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:F1SpeedSettings.cs" caret="2047" fromTop="32" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="4151" fromTop="33" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="3651" fromTop="25" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="2361" fromTop="24" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="3774" fromTop="46" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="2741" fromTop="13" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="3415" fromTop="31" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="1091" fromTop="33" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLap.cs" caret="1028" fromTop="36" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="4282" fromTop="35" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="4145" fromTop="32" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="4282" fromTop="37" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="4862" fromTop="45" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:Logging.cs" caret="1713" fromTop="51" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:BinaryTelemetryLapRepository.cs" caret="1878" fromTop="22" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Repositories/f:XmlTelemetryLapRepository.cs" caret="2061" fromTop="28" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="5820" fromTop="47" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="3749" fromTop="17" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/f:TelemetryLapManager.cs" caret="8097" fromTop="20" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/d:Properties/f:AssemblyInfo.cs" caret="1476" fromTop="35" />
+      <File id="265741B0-30F4-4E28-A054-BAEE3F6B3A52/d:Properties/f:AssemblyInfo.cs" caret="1430" fromTop="35" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.cs" caret="14606" fromTop="36" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.cs" caret="13790" fromTop="27" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.cs" caret="11157" fromTop="22" />
+      <File id="6A21F736-434E-4728-9AF6-E3821441CF4D/f:Form1.cs" caret="10929" fromTop="18" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="var" priority="86" />
+      <Item value="if" priority="83" />
+      <Item value="packetPosition" priority="0" />
+      <Item value="position" priority="1" />
+      <Item value="public" priority="107" />
+      <Item value="TelemetryLap`0" priority="43" />
+      <Item value="float" priority="43" />
+      <Item value="return" priority="79" />
+      <Item value="packets" priority="6" />
+      <Item value="void" priority="33" />
+      <Item value="new" priority="78" />
+      <Item value="packet" priority="74" />
+      <Item value="Speed" priority="3" />
+      <Item value="Test" priority="1" />
+      <Item value="TelemetryLapFixture`0" priority="2" />
+      <Item value="Assert`0" priority="17" />
+      <Item value="tLap" priority="6" />
+      <Item value="TelemetryPacket" priority="4" />
+      <Item value="origCount" priority="1" />
+      <Item value="TelemetryPacket`0" priority="8" />
+      <Item value="Time" priority="3" />
+      <Item value="EnvironmentVariableTarget`0" priority="3" />
+      <Item value="Distance" priority="3" />
+      <Item value="tPacketCompare" priority="0" />
+      <Item value="foundPacket" priority="0" />
+      <Item value="p" priority="0" />
+      <Item value="Math`0" priority="9" />
+      <Item value="laps" priority="8" />
+      <Item value="TelemetryPacketManagerFixture`0" priority="0" />
+      <Item value="manager" priority="34" />
+      <Item value="static" priority="21" />
+      <Item value="TelemetryLapHelpers`0" priority="0" />
+      <Item value="foreach" priority="8" />
+      <Item value="in" priority="6" />
+      <Item value="lap" priority="43" />
+      <Item value="Lap" priority="3" />
+      <Item value="TelemetryLapManager`0" priority="0" />
+      <Item value="FastestLap" priority="12" />
+      <Item value="CurrentLap" priority="30" />
+      <Item value="OrderedParallelQuery" priority="0" />
+      <Item value="null" priority="15" />
+      <Item value="string" priority="70" />
+      <Item value="currentPacket" priority="2" />
+      <Item value="fastestLapPacket" priority="1" />
+      <Item value="difference" priority="0" />
+      <Item value="closestPackets" priority="0" />
+      <Item value="Application`0" priority="6" />
+      <Item value="CanRaiseEvents" priority="1" />
+      <Item value="delta" priority="2" />
+      <Item value="int" priority="4" />
+      <Item value="DeltaLabel" priority="3" />
+      <Item value="Color`0" priority="5" />
+      <Item value="else" priority="16" />
+      <Item value="telemCaptureThread" priority="2" />
+      <Item value="latestDataForDisplay" priority="0" />
+      <Item value="latestData" priority="2" />
+      <Item value="bool" priority="21" />
+      <Item value="false" priority="8" />
+      <Item value="MustClose" priority="0" />
+      <Item value="true" priority="11" />
+      <Item value="udpSocket" priority="0" />
+      <Item value="ITelemetryPacketSerializer`0" priority="1" />
+      <Item value="TelemetryLapSerializer`0" priority="2" />
+      <Item value="private" priority="36" />
+      <Item value="identifier" priority="0" />
+      <Item value="const" priority="7" />
+      <Item value="for" priority="0" />
+      <Item value="index" priority="4" />
+      <Item value="lapDistances" priority="1" />
+      <Item value="Length" priority="1" />
+      <Item value="_AppDomain`0" priority="5" />
+      <Item value="LapTime" priority="8" />
+      <Item value="SampleRate" priority="0" />
+      <Item value="CreatedPopulatedLap`0" priority="0" />
+      <Item value="log" priority="1" />
+      <Item value="LapDistance" priority="1" />
+      <Item value="X" priority="1" />
+      <Item value="Y" priority="1" />
+      <Item value="Z" priority="0" />
+      <Item value="writeLog`0" priority="0" />
+      <Item value="AssemblyLoadEventArgs`0" priority="0" />
+      <Item value="this" priority="15" />
+      <Item value="timeInSeconds" priority="2" />
+      <Item value="TimeSpan`0" priority="0" />
+      <Item value="double" priority="0" />
+      <Item value="ts" priority="0" />
+      <Item value="FastestLapLabel" priority="0" />
+      <Item value="CurrentLapLabel" priority="0" />
+      <Item value="TimeDeltaLabel" priority="0" />
+      <Item value="timeDelta" priority="5" />
+      <Item value="IFeatureSupport`0" priority="0" />
+      <Item value="FasterBarLabel" priority="4" />
+      <Item value="SlowerBarLabel" priority="4" />
+      <Item value="MaxWidth" priority="1" />
+      <Item value="Size" priority="3" />
+      <Item value="Size`0" priority="1" />
+      <Item value="newSize" priority="1" />
+      <Item value="BarGroup" priority="0" />
+      <Item value="circuitName" priority="15" />
+      <Item value="filename" priority="6" />
+      <Item value="memStm" priority="0" />
+      <Item value="stmR" priority="0" />
+      <Item value="Encoding`0" priority="1" />
+      <Item value="PacketUtilities`0" priority="3" />
+      <Item value="LoadFastestLap`0" priority="0" />
+      <Item value="where" priority="2" />
+      <Item value="ObjectXMLSerializer" priority="1" />
+      <Item value="serializer" priority="5" />
+      <Item value="LapTypeDropDown" priority="5" />
+      <Item value="CircuitDropDown" priority="6" />
+      <Item value="lapType" priority="12" />
+      <Item value="GetFileName`0" priority="5" />
+      <Item value="File`0" priority="14" />
+      <Item value="TelemetryLapSerializer" priority="0" />
+      <Item value="fastestLap" priority="3" />
+      <Item value="IList" priority="3" />
+      <Item value="TelemetryLapHelper`0" priority="1" />
+      <Item value="Serializable" priority="1" />
+      <Item value="fastestLapData" priority="0" />
+      <Item value="StringReader`0" priority="0" />
+      <Item value="StringReader" priority="0" />
+      <Item value="reader" priority="2" />
+      <Item value="XmlSerializer`0" priority="1" />
+      <Item value="typeof" priority="2" />
+      <Item value="try" priority="11" />
+      <Item value="catch" priority="12" />
+      <Item value="xmlReader" priority="0" />
+      <Item value="IEnumerable" priority="7" />
+      <Item value="info" priority="12" />
+      <Item value="ISerializable`0" priority="0" />
+      <Item value="SerializationInfo`0" priority="1" />
+      <Item value="StreamingContext`0" priority="1" />
+      <Item value="XmlTelemetryLapSerializer`0" priority="1" />
+      <Item value="Stream`0" priority="1" />
+      <Item value="BinaryFormatter" priority="0" />
+      <Item value="binFormatter" priority="1" />
+      <Item value="stream" priority="3" />
+      <Item value="using" priority="5" />
+      <Item value="BinaryFormatter`0" priority="1" />
+      <Item value="Directory`0" priority="5" />
+      <Item value="abstract" priority="0" />
+      <Item value="TestAttribute`0" priority="1" />
+      <Item value="XV" priority="0" />
+      <Item value="YV" priority="0" />
+      <Item value="ZV" priority="0" />
+      <Item value="XR" priority="0" />
+      <Item value="YR" priority="0" />
+      <Item value="ZR" priority="0" />
+      <Item value="XD" priority="0" />
+      <Item value="YD" priority="0" />
+      <Item value="ZD" priority="0" />
+      <Item value="Clutch" priority="0" />
+      <Item value="GForceLatitudinal" priority="0" />
+      <Item value="GForceLongitudinal" priority="0" />
+      <Item value="EngineRevs" priority="0" />
+      <Item value="T`0" priority="0" />
+      <Item value="Packets" priority="2" />
+      <Item value="CircuitName" priority="4" />
+      <Item value="LapType" priority="2" />
+      <Item value="ITelemetryLapRepository`0" priority="6" />
+      <Item value="TelemetryLap" priority="2" />
+      <Item value="xmlRepo" priority="1" />
+      <Item value="xmlFastestLap" priority="4" />
+      <Item value="fastestLapRepository" priority="0" />
+      <Item value="Deployment" priority="1" />
+      <Item value="deploy" priority="1" />
+      <Item value="Application" priority="0" />
+      <Item value="ApplicationDeployment`0" priority="1" />
+      <Item value="version" priority="1" />
+      <Item value="Data" priority="0" />
+      <Item value="SQLite" priority="0" />
+      <Item value="TEntity`0" priority="0" />
+      <Item value="class" priority="1" />
+      <Item value="protected" priority="2" />
+      <Item value="x" priority="17" />
+      <Item value="Map`0" priority="37" />
+      <Item value="TelemetryPacketMap`0" priority="0" />
+      <Item value="SQLiteConfiguration`0" priority="0" />
+      <Item value="BuildSchema`0" priority="0" />
+      <Item value="_sessionFactory" priority="0" />
+      <Item value="grpBox" priority="2" />
+      <Item value="sender" priority="0" />
+      <Item value="as" priority="0" />
+      <Item value="GroupBox`0" priority="0" />
+      <Item value="PORTNUM" priority="2" />
+      <Item value="e" priority="0" />
+      <Item value="SystemColors`0" priority="0" />
+      <Item value="color" priority="0" />
+      <Item value="continue" priority="0" />
+      <Item value="UpdateTimeDelta`0" priority="0" />
+      <Item value="BrakeBar" priority="2" />
+      <Item value="ThrottleBar" priority="2" />
+      <Item value="MaxHeight" priority="1" />
+      <Item value="brake" priority="0" />
+      <Item value="RtlTranslateHorizontal`0" priority="0" />
+      <Item value="throttle" priority="0" />
+      <Item value="System" priority="0" />
+      <Item value="Diagnostics" priority="0" />
+      <Item value="Process`0" priority="2" />
+      <Item value="SaveFileDialog`0" priority="1" />
+      <Item value="SaveFileDialog" priority="0" />
+      <Item value="saveDialog" priority="7" />
+      <Item value="result" priority="2" />
+      <Item value="OK" priority="3" />
+      <Item value="TelemetryLapRepository`0" priority="1" />
+      <Item value="OpenFileDialog`0" priority="1" />
+      <Item value="openDialog" priority="6" />
+      <Item value="Get`0" priority="0" />
+      <Item value="Save`0" priority="0" />
+      <Item value="fileRepo" priority="1" />
+      <Item value="ReferenceLap" priority="5" />
+      <Item value="referenceLap" priority="3" />
+      <Item value="LapMode`0" priority="0" />
+      <Item value="ComparisonModeEnum`0" priority="0" />
+      <Item value="ComparisonMode" priority="6" />
+      <Item value="Reference" priority="4" />
+      <Item value="MigrateXmlLapsToBinary`0" priority="0" />
+      <Item value="ComparisonModeLabel" priority="0" />
+      <Item value="ComparisonLap" priority="3" />
+      <Item value="ComparisonLapTime" priority="0" />
+      <Item value="ComparisonLapLabel" priority="0" />
+      <Item value="clearReferenceLapToolStripMenuItem" priority="1" />
+      <Item value="ProcessCmdKey`0" priority="1" />
+      <Item value="f1proc" priority="0" />
+      <Item value="f1Processes" priority="2" />
+      <Item value="AverageLapLabel" priority="0" />
+      <Item value="fileName" priority="5" />
+      <Item value="Environment`0" priority="3" />
+      <Item value="Path`0" priority="1" />
+      <Item value="localAppData" priority="0" />
+      <Item value="userFilePath" priority="8" />
+      <Item value="IDictionary" priority="0" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="trackNumbers" priority="0" />
+      <Item value="DateTime`0" priority="0" />
+      <Item value="GetTrackNumber`0" priority="0" />
+      <Item value="StringBuilder`0" priority="0" />
+      <Item value="outputBuffer" priority="3" />
+      <Item value="GetHeaderLines`0" priority="1" />
+      <Item value="List" priority="10" />
+      <Item value="data" priority="9" />
+      <Item value="FileName`0" priority="2" />
+      <Item value="directory" priority="0" />
+      <Item value="readonly" priority="1" />
+      <Item value="IF1PerfViewExporter`0" priority="0" />
+      <Item value="perfViewExporter" priority="1" />
+      <Item value="F1PerfViewExporter" priority="0" />
+      <Item value="DirectoryExists`0" priority="0" />
+      <Item value="DirectoryInfo`0" priority="0" />
+      <Item value="path" priority="0" />
+      <Item value="fileMode" priority="1" />
+      <Item value="IFileSystemFacade`0" priority="3" />
+      <Item value="CsvTelemetryLapRepository`0" priority="2" />
+      <Item value="fileSystemFacade" priority="3" />
+      <Item value="fileSystem" priority="10" />
+      <Item value="FileSystemFacade" priority="0" />
+      <Item value="DataFolder`0" priority="0" />
+      <Item value="LateralAcceleration" priority="0" />
+      <Item value="LongitudinalAcceleration" priority="0" />
+      <Item value="F1PerfViewTelemetryLapRepository`0" priority="2" />
+      <Item value="FileSystemFacade`0" priority="0" />
+      <Item value="currentLapExports" priority="0" />
+      <Item value="currentLapExporters" priority="0" />
+      <Item value="finally" priority="1" />
+      <Item value="override" priority="1" />
+      <Item value="F1PerfViewTelemetryLapRepository" priority="0" />
+      <Item value="repository" priority="0" />
+      <Item value="Database" priority="5" />
+      <Item value="Column" priority="7" />
+      <Item value="PrimaryKeyWithIdentity" priority="1" />
+      <Item value="String" priority="0" />
+      <Item value="None" priority="0" />
+      <Item value="NotNull" priority="1" />
+      <Item value="ColumnProperty`0" priority="0" />
+      <Item value="Migration`0" priority="0" />
+      <Item value="Int32" priority="0" />
+      <Item value="Double" priority="0" />
+      <Item value="NewsStyleUriParser`0" priority="1" />
+      <Item value="Migrator" priority="0" />
+      <Item value="IsOneWay" priority="0" />
+      <Item value="ParallelEnumerable`0" priority="1" />
+      <Item value="Namespace" priority="0" />
+      <Item value="IF1SpeedService`0" priority="1" />
+      <Item value="Lap`0" priority="4" />
+      <Item value="LapMap`0" priority="0" />
+      <Item value="Id`1" priority="0" />
+      <Item value="DataMember" priority="0" />
+      <Item value="Table`0" priority="0" />
+      <Item value="References`1" priority="1" />
+      <Item value="LapSample`0" priority="0" />
+      <Item value="LapSampleMap`0" priority="0" />
+      <Item value="TransmissionLabel" priority="2" />
+      <Item value="HasMany`1" priority="0" />
+      <Item value="F1Speed" priority="0" />
+      <Item value="Service" priority="0" />
+      <Item value="Repositories" priority="0" />
+      <Item value="Mappings" priority="0" />
+      <Item value="InMemoryData`0" priority="0" />
+      <Item value="LapId" priority="1" />
+      <Item value="Driver" priority="1" />
+      <Item value="Session" priority="3" />
+      <Item value="Exception`0" priority="12" />
+      <Item value="ex" priority="5" />
+      <Item value="cfg" priority="0" />
+      <Item value="more2" priority="0" />
+      <Item value="more3" priority="0" />
+      <Item value="F1SpeedSettings`0" priority="8" />
+      <Item value="XmlTextWriter`0" priority="0" />
+      <Item value="FilePath" priority="0" />
+      <Item value="writer" priority="13" />
+      <Item value="WriteState`0" priority="1" />
+      <Item value="AllowConnectionsFromOtherMachines" priority="3" />
+      <Item value="SendFastestLapToServer" priority="4" />
+      <Item value="XmlElement`0" priority="0" />
+      <Item value="XElement" priority="0" />
+      <Item value="XDocument`0" priority="1" />
+      <Item value="XmlTextReader`0" priority="1" />
+      <Item value="PreserveWhitespace" priority="0" />
+      <Item value="settings" priority="3" />
+      <Item value="from" priority="0" />
+      <Item value="setting" priority="4" />
+      <Item value="select" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="APIKey" priority="2" />
+      <Item value="AllowExternalConnectionsCheckBox" priority="1" />
+      <Item value="MessageBox`0" priority="2" />
+      <Item value="Options`0" priority="0" />
+      <Item value="optionsForm" priority="0" />
+      <Item value="remoteIP" priority="1" />
+      <Item value="IPEndPoint" priority="1" />
+      <Item value="IPAddress`0" priority="0" />
+      <Item value="IP" priority="0" />
+      <Item value="Samples" priority="2" />
+      <Item value="mbox" priority="0" />
+      <Item value="LapSample" priority="0" />
+      <Item value="Brake" priority="0" />
+      <Item value="Throttle" priority="0" />
+      <Item value="samples" priority="1" />
+      <Item value="fromDb" priority="1" />
+      <Item value="IRepository" priority="1" />
+      <Item value="AbstractRepository" priority="0" />
+      <Item value="IClientChannel`0" priority="0" />
+      <Item value="F1SpeedService`0" priority="0" />
+      <Item value="_lapRepository" priority="0" />
+      <Item value="LapRepository`0" priority="0" />
+      <Item value="ILapRepository`0" priority="0" />
+      <Item value="MockLapGenerator`0" priority="0" />
+      <Item value="lapLength" priority="0" />
+      <Item value="IEnumerator" priority="0" />
+      <Item value="lapCount" priority="0" />
+      <Item value="global" priority="0" />
+      <Item value="List&lt;TelemetryLap&gt;" priority="0" />
+      <Item value="Console`0" priority="1" />
+      <Item value="dex" priority="0" />
+      <Item value="throw" priority="3" />
+      <Item value="value" priority="6" />
+      <Item value="hasFinished" priority="4" />
+      <Item value="Logger`0" priority="3" />
+      <Item value="log4net" priority="0" />
+      <Item value="ILog`0" priority="0" />
+      <Item value="LogManager`0" priority="0" />
+      <Item value="logger" priority="15" />
+      <Item value="currentLapPacket" priority="1" />
+      <Item value="HasLappedChanged`0" priority="0" />
+      <Item value="hasDataBeenReceived" priority="5" />
+      <Item value="IGrouping" priority="0" />
+      <Item value="cutoff" priority="1" />
+      <Item value="Is`0" priority="0" />
+      <Item value="c" priority="0" />
+      <Item value="LogPacketData" priority="2" />
+      <Item value="LogPacketDataCheckBox" priority="1" />
+      <Item value="LogPacketDataKey" priority="0" />
+      <Item value="HasStartLinePacket" priority="0" />
+      <Item value="IsCompleteLap" priority="0" />
+      <Item value="HasLapFinished" priority="1" />
+      <Item value="LatestPacket" priority="0" />
+      <Item value="UnmanagedFunctionPointerAttribute`0" priority="0" />
+      <Item value="Information" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.TelemetryLap">
+      <Item value="Packets" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="Count`1" priority="3" />
+      <Item value="ElementAt`1" priority="0" />
+      <Item value="Last`1" priority="2" />
+      <Item value="Any`1" priority="2" />
+      <Item value="Average`1" priority="0" />
+      <Item value="First`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="OrderBy`2" priority="0" />
+      <Item value="First`1" priority="0" />
+      <Item value="Count" priority="0" />
+      <Item value="Clear`0" priority="3" />
+      <Item value="Any`1" priority="3" />
+      <Item value="Add`0" priority="0" />
+      <Item value="All`1" priority="0" />
+      <Item value="Remove`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.TelemetryPacket">
+      <Item value="ZV" priority="0" />
+      <Item value="Speed" priority="0" />
+      <Item value="SpeedInKmPerHour" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual`0" priority="9" />
+      <Item value="AreNotSame`0" priority="1" />
+      <Item value="AreNotEqual`0" priority="0" />
+      <Item value="IsTrue`0" priority="1" />
+      <Item value="IsNull`0" priority="1" />
+      <Item value="IsNotNull`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.TelemetryLap">
+      <Item value="Packets" priority="20" />
+      <Item value="AddPacket`0" priority="4" />
+      <Item value="IsCompleteLap" priority="6" />
+      <Item value="GetPacketClosestTo`0" priority="1" />
+      <Item value="LapTime" priority="12" />
+      <Item value="CircuitName" priority="12" />
+      <Item value="LapType" priority="10" />
+      <Item value="HasLapFinished" priority="5" />
+      <Item value="LapNumber" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.TelemetryPacket">
+      <Item value="Distance" priority="6" />
+      <Item value="ZV" priority="0" />
+      <Item value="Lap" priority="4" />
+      <Item value="SpeedInKmPerHour" priority="4" />
+      <Item value="ToString`0" priority="2" />
+      <Item value="LapDistance" priority="8" />
+      <Item value="Brake" priority="3" />
+      <Item value="Clutch" priority="1" />
+      <Item value="EngineRevs" priority="2" />
+      <Item value="Gear" priority="2" />
+      <Item value="GForceLatitudinal" priority="1" />
+      <Item value="GForceLongitudinal" priority="1" />
+      <Item value="LapTime" priority="5" />
+      <Item value="Speed" priority="1" />
+      <Item value="Steer" priority="2" />
+      <Item value="SuspensionPositionFrontLeft" priority="2" />
+      <Item value="SuspensionPositionRearLeft" priority="3" />
+      <Item value="SuspensionVelocitoyFrontLeft" priority="0" />
+      <Item value="SuspensionVelocitoyRearLeft" priority="0" />
+      <Item value="Throttle" priority="3" />
+      <Item value="WheelSpeedBackLeft" priority="2" />
+      <Item value="X" priority="1" />
+      <Item value="XR" priority="1" />
+      <Item value="XV" priority="0" />
+      <Item value="Z" priority="1" />
+      <Item value="ZD" priority="1" />
+      <Item value="SuspensionPositionRearRight" priority="2" />
+      <Item value="WheelSpeedBackRight" priority="1" />
+      <Item value="WheelSpeedFrontRight" priority="2" />
+      <Item value="Y" priority="1" />
+      <Item value="LongitudinalAcceleration" priority="1" />
+      <Item value="LateralAcceleration" priority="1" />
+      <Item value="Time" priority="0" />
+      <Item value="WorldSpeedX" priority="0" />
+      <Item value="WorldSpeedY" priority="0" />
+      <Item value="WorldSpeedZ" priority="0" />
+      <Item value="Roll" priority="0" />
+      <Item value="ZR" priority="0" />
+      <Item value="XD" priority="0" />
+      <Item value="SuspensionPositionFrontRight" priority="0" />
+      <Item value="SuspensionVelocityRearLeft" priority="0" />
+      <Item value="SuspensionVelocityRearRight" priority="0" />
+      <Item value="SuspensionVelocityFrontLeft" priority="0" />
+      <Item value="SuspensionVelocityFrontRight" priority="0" />
+      <Item value="WheelSpeedFrontLeft" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Abs`0" priority="2" />
+      <Item value="Truncate`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IOrderedEnumerable`1">
+      <Item value="First`1" priority="0" />
+      <Item value="Take`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.TelemetryLapManager">
+      <Item value="AddPacket`0" priority="1" />
+      <Item value="FastestLap" priority="12" />
+      <Item value="GetSpeedDelta`0" priority="3" />
+      <Item value="FastestLapTime" priority="0" />
+      <Item value="CurrentLapTime" priority="0" />
+      <Item value="GetTimeDelta`0" priority="0" />
+      <Item value="circuitName" priority="0" />
+      <Item value="ChangeCircuit`0" priority="0" />
+      <Item value="lapType" priority="0" />
+      <Item value="ComparisonMode" priority="2" />
+      <Item value="ReferenceLap" priority="2" />
+      <Item value="ComparisonLapTime" priority="0" />
+      <Item value="AverageLapTime" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@F1Speed.Tests.TelemetryLapHelper">
+      <Item value="CreatePopulatedLap`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="7" />
+      <Item value="IsNullOrEmpty`0" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Form1">
+      <Item value="Text" priority="0" />
+      <Item value="Width" priority="1" />
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="ProductVersion" priority="3" />
+      <Item value="Exit`0" priority="2" />
+      <Item value="AllowQuit" priority="0" />
+      <Item value="ExitThread`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToString`0" priority="1" />
+      <Item value="Substring`0" priority="0" />
+      <Item value="Replace`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Layout" priority="0" />
+      <Item value="Font" priority="0" />
+      <Item value="ForeColor" priority="2" />
+      <Item value="Text" priority="6" />
+      <Item value="Width" priority="1" />
+      <Item value="Size" priority="4" />
+      <Item value="Left" priority="1" />
+      <Item value="Height" priority="3" />
+      <Item value="Location" priority="1" />
+      <Item value="BackColor" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="Green" priority="1" />
+      <Item value="Red" priority="1" />
+      <Item value="White" priority="0" />
+      <Item value="Transparent" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Abort`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.UdpClient">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="CompareTo`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Single">
+      <Item value="CompareTo`0" priority="0" />
+      <Item value="AsTimeString`0" priority="8" />
+      <Item value="ToString`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="0" />
+      <Item value="AppendText`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.TimeSpan">
+      <Item value="FromSeconds`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Size">
+      <Item value="Width" priority="2" />
+      <Item value="Height" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="AppendText`0" priority="0" />
+      <Item value="AppendAllText`0" priority="0" />
+      <Item value="Exists`0" priority="4" />
+      <Item value="ReadAllText`0" priority="0" />
+      <Item value="Open`0" priority="2" />
+      <Item value="Delete`0" priority="2" />
+      <Item value="WriteAllLines`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadToEnd`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="UTF8" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@F1Speed.Core.ObjectXMLSerializer`1">
+      <Item value="SaveToDocumentFormat`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="SelectedIndex" priority="6" />
+      <Item value="SelectedText" priority="0" />
+      <Item value="SelectedItem" priority="2" />
+      <Item value="SelectedValue" priority="0" />
+      <Item value="Items" priority="0" />
+      <Item value="FindString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.TelemetryLapSerializer">
+      <Item value="Deserialize`0" priority="1" />
+      <Item value="Serialize`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.Serialization.XmlSerializer">
+      <Item value="Deserialize`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlTextReader">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringReader">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter">
+      <Item value="Serialize`0" priority="0" />
+      <Item value="Deserialize`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Close`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="CreateDirectory`0" priority="3" />
+      <Item value="Exists`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.Serialization.SerializationInfo">
+      <Item value="AddValue`0" priority="7" />
+      <Item value="GetValue`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.XmlTelemetryLapRepository">
+      <Item value="Get`0" priority="0" />
+      <Item value="Delete`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.ITelemetryLapRepository">
+      <Item value="Save`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Deployment.Application.ApplicationDeployment">
+      <Item value="CurrentDeployment" priority="3" />
+      <Item value="IsNetworkDeployed" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Deployment.Application.ApplicationDeployment">
+      <Item value="CurrentVersion" priority="1" />
+      <Item value="DataDirectory" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Version">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.PropertyPart">
+      <Item value="Length`0" priority="1" />
+      <Item value="Not" priority="1" />
+      <Item value="Nullable`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Cfg.Db.SQLiteConfiguration">
+      <Item value="Standard" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.Db.SQLiteConfiguration">
+      <Item value="ConnectionString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISessionFactory">
+      <Item value="GetCurrentSession`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.GroupBox">
+      <Item value="Paint" priority="0" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.PaintEventArgs">
+      <Item value="Graphics" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Graphics">
+      <Item value="Clear`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.SystemColors">
+      <Item value="Control" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Last`1" priority="3" />
+      <Item value="Any`1" priority="2" />
+      <Item value="Clear`0" priority="1" />
+      <Item value="Add`0" priority="1" />
+      <Item value="AddRange`0" priority="1" />
+      <Item value="Count" priority="0" />
+      <Item value="LastOrDefault`1" priority="1" />
+      <Item value="First`1" priority="1" />
+      <Item value="Remove`0" priority="0" />
+      <Item value="All`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Process">
+      <Item value="Start`0" priority="0" />
+      <Item value="GetProcessesByName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.SaveFileDialog">
+      <Item value="Filter" priority="0" />
+      <Item value="Title" priority="0" />
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="FileName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@F1Speed.Core.TelemetryLapRepository">
+      <Item value="GetFileName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="Filter" priority="0" />
+      <Item value="Title" priority="0" />
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="FileName" priority="1" />
+      <Item value="Multiselect" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.BinaryTelemetryLapRepository">
+      <Item value="Save`0" priority="0" />
+      <Item value="Get`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ToolStripMenuItem">
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="GetFolderPath`0" priority="0" />
+      <Item value="SpecialFolder`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment+SpecialFolder">
+      <Item value="LocalApplicationData" priority="0" />
+      <Item value="MyDocuments" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="Combine`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="Append`0" priority="1" />
+      <Item value="AppendLine`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.IF1PerfViewExporter">
+      <Item value="Equals`0" priority="0" />
+      <Item value="Export`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.IFileSystemFacade">
+      <Item value="DirectoryExists`0" priority="0" />
+      <Item value="CreateDirectory`0" priority="0" />
+      <Item value="FileExists`0" priority="0" />
+      <Item value="DeleteFile`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.Repositories.IFileSystemFacade">
+      <Item value="DirectoryExists`0" priority="0" />
+      <Item value="FileExists`0" priority="0" />
+      <Item value="DeleteFile`0" priority="0" />
+      <Item value="WriteAllLines`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="1" />
+      <Item value="Write`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Core.Repositories.F1PerfViewTelemetryLapRepository">
+      <Item value="Save`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Migrator.Framework.ITransformationProvider">
+      <Item value="RemoveTable`0" priority="1" />
+      <Item value="AddTable`0" priority="1" />
+      <Item value="AddCheckConstraint`0" priority="0" />
+      <Item value="AddForeignKey`0" priority="0" />
+      <Item value="RemoveForeignKey`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Migrator.Framework.ColumnProperty">
+      <Item value="Unsigned" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Data.DbType">
+      <Item value="Int32" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Service.Lap">
+      <Item value="LapId" priority="1" />
+      <Item value="Driver" priority="0" />
+      <Item value="CircuitName" priority="1" />
+      <Item value="LapTime" priority="0" />
+      <Item value="Samples" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Service.LapSample">
+      <Item value="LapDistance" priority="0" />
+      <Item value="WorldSpeedX" priority="0" />
+      <Item value="WorldSpeedY" priority="0" />
+      <Item value="WorldSpeedZ" priority="0" />
+      <Item value="Pitch" priority="0" />
+      <Item value="SuspensionPositionRearRight" priority="0" />
+      <Item value="SuspensionVelocityFrontLeft" priority="0" />
+      <Item value="SuspensionVelocityRearLeft" priority="0" />
+      <Item value="SuspensionVelocityFrontRight" priority="0" />
+      <Item value="WheelSpeedRearRight" priority="0" />
+      <Item value="WheelSpeedFrontLeft" priority="0" />
+      <Item value="Throttle" priority="0" />
+      <Item value="LateralAcceleration" priority="1" />
+      <Item value="LongitudinalAcceleration" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.OneToManyPart`1">
+      <Item value="KeyColumn`0" priority="0" />
+      <Item value="Cascade" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CollectionCascadeExpression`1">
+      <Item value="AllDeleteOrphan`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="Save`0" priority="1" />
+      <Item value="Flush`0" priority="0" />
+      <Item value="Clear`0" priority="0" />
+      <Item value="Get`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
+      <Item value="IsNotNull`0" priority="0" />
+      <Item value="AreEqual`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="0" />
+      <Item value="InnerException" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.FluentConfiguration">
+      <Item value="Mappings`0" priority="0" />
+      <Item value="ExposeConfiguration`0" priority="0" />
+      <Item value="BuildSessionFactory`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlTextWriter">
+      <Item value="WriteDocType`0" priority="0" />
+      <Item value="WriteStartDocument`0" priority="0" />
+      <Item value="WriteEndDocument`0" priority="0" />
+      <Item value="WriteStartElement`0" priority="2" />
+      <Item value="WriteElementString`0" priority="4" />
+      <Item value="WriteEndElement`0" priority="0" />
+      <Item value="Flush`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Boolean">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Xml.Linq.XDocument">
+      <Item value="Load`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.Linq.XDocument">
+      <Item value="Descendants`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.Linq.XElement">
+      <Item value="Element`0" priority="2" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Boolean">
+      <Item value="Parse`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CheckBox">
+      <Item value="Checked" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@F1Speed.Core.F1SpeedSettings">
+      <Item value="AllowConnectionsFromOtherMachines" priority="3" />
+      <Item value="Save`0" priority="0" />
+      <Item value="LogPacketData" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.OptionsForm">
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="Close`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.IPAddress">
+      <Item value="Any" priority="0" />
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Service.Model.Lap">
+      <Item value="LapId" priority="0" />
+      <Item value="CircuitName" priority="1" />
+      <Item value="Driver" priority="1" />
+      <Item value="LapTime" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:F1Speed.Tests.MockLapGenerator">
+      <Item value="lapLength" priority="0" />
+      <Item value="lapCount" priority="0" />
+      <Item value="laps" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@log4net.LogManager">
+      <Item value="CreateRepository`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@F1Speed.Core.Logger">
+      <Item value="Create`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:log4net.ILog">
+      <Item value="Debug`0" priority="10" />
+      <Item value="Error`0" priority="4" />
+      <Item value="Logger" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
