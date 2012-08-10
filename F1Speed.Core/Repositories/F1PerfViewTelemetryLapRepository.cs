@@ -36,14 +36,15 @@ namespace F1Speed.Core.Repositories
                                                                    { "Britian", "9" },
                                                                    { "Hockenheimring", "20" },
                                                                    { "Nurburgring", "10" },
-                                                                   { "Belgium", "11" },
-                                                                   { "Italy", "12" },
-                                                                   { "Singapore", "13" },
-                                                                   { "Korea", "14" },
-                                                                   { "Brazil", "15" },
-                                                                   { "Interlagos", "16" },
-                                                                   { "Abu Dahbi", "17" },
-                                                                   { "India", "18" },
+                                                                   { "Hungoraring", "11" },
+                                                                   { "Belgium", "12" },
+                                                                   { "Italy", "13" },
+                                                                   { "Singapore", "14" },
+                                                                   { "Korea", "15" },
+                                                                   { "Brazil", "16" },
+                                                                   { "Interlagos", "17" },
+                                                                   { "Abu Dahbi", "18" },
+                                                                   { "India", "19" },
                                                                };
 
         public void Save(TelemetryLap lap)
