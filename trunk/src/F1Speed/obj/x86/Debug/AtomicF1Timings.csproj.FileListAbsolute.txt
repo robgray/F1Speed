@@ -1,5 +1,0 @@
-D:\source\AtomicF1Timings\AtomicF1Timings\bin\Debug\AtomicF1Timings.exe
-D:\source\AtomicF1Timings\AtomicF1Timings\bin\Debug\AtomicF1Timings.pdb
-D:\source\AtomicF1Timings\AtomicF1Timings\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\source\AtomicF1Timings\AtomicF1Timings\obj\x86\Debug\AtomicF1Timings.exe
-D:\source\AtomicF1Timings\AtomicF1Timings\obj\x86\Debug\AtomicF1Timings.pdb

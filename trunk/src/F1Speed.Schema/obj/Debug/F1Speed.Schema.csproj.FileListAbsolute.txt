@@ -1,5 +1,0 @@
-D:\source\F1Speed\trunk\dependancies\F1Speed.Schema.dll
-D:\source\F1Speed\trunk\dependancies\F1Speed.Schema.pdb
-D:\source\F1Speed\trunk\src\F1Speed.Schema\obj\Debug\ResolveAssemblyReference.cache
-D:\source\F1Speed\trunk\src\F1Speed.Schema\obj\Debug\F1Speed.Schema.dll
-D:\source\F1Speed\trunk\src\F1Speed.Schema\obj\Debug\F1Speed.Schema.pdb

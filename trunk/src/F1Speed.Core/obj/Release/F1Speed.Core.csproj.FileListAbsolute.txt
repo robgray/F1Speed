@@ -1,5 +1,0 @@
-D:\source\F1Speed\trunk\src\F1Speed.Core\bin\Release\F1Speed.Core.dll
-D:\source\F1Speed\trunk\src\F1Speed.Core\bin\Release\F1Speed.Core.pdb
-D:\source\F1Speed\trunk\src\F1Speed.Core\obj\Release\ResolveAssemblyReference.cache
-D:\source\F1Speed\trunk\src\F1Speed.Core\obj\Release\F1Speed.Core.dll
-D:\source\F1Speed\trunk\src\F1Speed.Core\obj\Release\F1Speed.Core.pdb

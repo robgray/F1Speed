@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Speed", "F1Speed\F1Speed.csproj", "{6A21F736-434E-4728-9AF6-E3821441CF4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Speed.Tests", "F1Speed.Tests\F1Speed.Tests.csproj", "{03A28DF6-D633-4E33-A3E6-64E596922C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Speed.Core", "F1Speed.Core\F1Speed.Core.csproj", "{265741B0-30F4-4E28-A054-BAEE3F6B3A52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{57543A7D-91A0-43C6-81B5-4C145B8072DE}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = F1Speed.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|Any CPU.Build.0 = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|x86.ActiveCfg = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Debug|x86.Build.0 = Debug|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Release|Any CPU.ActiveCfg = Release|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Release|Mixed Platforms.Build.0 = Release|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Release|x86.ActiveCfg = Release|x86
+		{6A21F736-434E-4728-9AF6-E3821441CF4D}.Release|x86.Build.0 = Release|x86
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{03A28DF6-D633-4E33-A3E6-64E596922C03}.Release|x86.ActiveCfg = Release|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03A28DF6-D633-4E33-A3E6-64E596922C03} = {57543A7D-91A0-43C6-81B5-4C145B8072DE}
+		{265741B0-30F4-4E28-A054-BAEE3F6B3A52} = {57543A7D-91A0-43C6-81B5-4C145B8072DE}
+		{6A21F736-434E-4728-9AF6-E3821441CF4D} = {57543A7D-91A0-43C6-81B5-4C145B8072DE}
+	EndGlobalSection
+EndGlobal
