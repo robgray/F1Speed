@@ -5,19 +5,23 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using F1Speed.Core;
 using System.Runtime.InteropServices;
 using F1Speed.Core.Repositories;
 using log4net;
+using log4net.Core;
 
 namespace F1Speed
 {
     public partial class Form1 : Form
     {
-        private static ILog logger = Logger.Create();
+        private delegate void WriteLogCallback(string text);
 
+        private static ILog logger = Logger.Create();
+        
         // Constants
         private const int PORTNUM = 20777;
         private const string IP = "127.0.0.1";
@@ -36,18 +40,17 @@ namespace F1Speed
 
         // Holds the latest data captured from the game
         TelemetryPacket latestData;
-        TelemetryPacket latestDataForDisplay;
 
         // Mutex used to protect latestData from simultaneous access by both threads
         static Mutex syncMutex = new Mutex();
 
-        static TelemetryLapManager manager = new TelemetryLapManager();
+        private TelemetryLapManager manager;
 
         static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         const UInt32 SWP_NOSIZE = 0x0001;
         const UInt32 SWP_NOMOVE = 0x0002;
         const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
-
+        
         //[DllImport("user32.dll")]
         //[return: MarshalAs(UnmanagedType.Bool)]
         //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
@@ -56,7 +59,26 @@ namespace F1Speed
         {
             InitializeComponent();
 
-            logger.Debug("Listing on port " + PORTNUM + " for connections from " +
+
+            manager = new TelemetryLapManager();
+#if DEBUG
+            this.Height = 900;
+
+            manager.CompletedFullLap += (s, e) => writeLog(string.Format("Completed Full Lap.  Last={0}...Current={1}", e.PreviousLapNumber, e.CurrentLapNumber));
+            manager.RemovedLap += (s, e) => writeLog(string.Format("Removed Lap. Number={0}", e.Lap != null ? e.Lap.LapNumber : -1));
+            manager.ReturnedToGarage += (s, e) => writeLog("Now in Garage");
+            manager.FinishedOutLap += (s, e) => writeLog("Completed Out Lap");
+            manager.StartedOutLap += (s, e) => writeLog("Started Out Lap");
+            manager.SetFastestLap += (s, e) => writeLog(string.Format("Set Fastest Lap={0}", e.Lap.LapTime.AsTimeString()));
+            manager.PacketProcessed += (s, e) => writeLog(string.Format("Packet: {0}", e.Packet));
+#else
+            this.Height = 490;
+#endif
+            
+            
+            
+
+            writeLog("Listing on port " + PORTNUM + " for connections from " +
                          (F1SpeedSettings.AllowConnectionsFromOtherMachines ? "ANY IP" : IP));
             
             remoteIP = F1SpeedSettings.AllowConnectionsFromOtherMachines ? new IPEndPoint(IPAddress.Any, PORTNUM) : new IPEndPoint(IPAddress.Parse(IP), PORTNUM);
@@ -128,7 +150,7 @@ namespace F1Speed
 
                 // Convert the bytes received to the shared struct
                 latestData = PacketUtilities.ConvertToPacket(receiveBytes);
-                manager.AddPacket(latestData);
+                manager.ProcessIncomingPacket(latestData);
 
                 //TransmissionLabel.BackColor = Color.Red;
                 
@@ -226,7 +248,18 @@ namespace F1Speed
 
         private void writeLog(string log)
         {
-            //OutputText.AppendText(log + "\r\n");   
+            if (this.LogBox.InvokeRequired)
+            {                
+                this.BeginInvoke(new WriteLogCallback(writeLog), new object[] { log });
+            }
+            else
+            {
+                LogBox.Items.Insert(0, log);
+                if (LogBox.Items.Count > 100)
+                    LogBox.Items.RemoveAt(LogBox.Items.Count - 1);
+
+                logger.Info(log);
+            }            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -238,6 +271,7 @@ namespace F1Speed
                 version = deploy.CurrentVersion.ToString();
             }
             this.Text = string.Format("F1 Speed (v{0})", version);
+
             LapTypeDropDown.SelectedIndex = -1;
             CircuitDropDown.SelectedIndex = -1;
 

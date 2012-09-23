@@ -69,6 +69,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LogBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.BarGroup.SuspendLayout();
@@ -328,7 +329,8 @@
             "Brazil",
             "Interlagos",
             "Abu Dahbi",
-            "India"});
+            "India",
+            "United States"});
             this.CircuitDropDown.Location = new System.Drawing.Point(93, 16);
             this.CircuitDropDown.Name = "CircuitDropDown";
             this.CircuitDropDown.Size = new System.Drawing.Size(289, 37);
@@ -494,12 +496,25 @@
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
+            // LogBox
+            // 
+            this.LogBox.BackColor = System.Drawing.Color.Black;
+            this.LogBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.LogBox.FormattingEnabled = true;
+            this.LogBox.ItemHeight = 20;
+            this.LogBox.Location = new System.Drawing.Point(13, 452);
+            this.LogBox.Name = "LogBox";
+            this.LogBox.Size = new System.Drawing.Size(909, 384);
+            this.LogBox.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(935, 452);
+            this.ClientSize = new System.Drawing.Size(935, 862);
+            this.Controls.Add(this.LogBox);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ControlsGroup);
@@ -568,5 +583,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ListBox LogBox;
     }
 }

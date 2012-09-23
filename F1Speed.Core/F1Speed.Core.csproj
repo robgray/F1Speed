@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompletedFullLapEventArgs.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="F1SpeedSettings.cs" />
+    <Compile Include="LapEventArgs.cs" />
     <Compile Include="Logging.cs" />
+    <Compile Include="PacketEventArgs.cs" />
     <Compile Include="Repositories\BinaryTelemetryLapRepository.cs" />
     <Compile Include="Repositories\CsvTelemetryLapRepository.cs" />
     <Compile Include="Extensions.cs" />

@@ -128,6 +128,18 @@ namespace F1Speed.Core
             get { return Speed*3.60f;  }
         }
 
+        [XmlIgnore]
+        public bool IsSittingInPits
+        {
+            get { return Math.Abs(LapTime - 0) < Constants.Epsilon && Math.Abs(Speed - 0) < Constants.Epsilon; }
+        }
+
+        [XmlIgnore]
+        public bool IsInPitLane
+        {
+            get { return Math.Abs(LapTime - 0) < Constants.Epsilon; }
+        }
+
         public override string ToString()
         {
             return "Lap: " + Lap + ", " +

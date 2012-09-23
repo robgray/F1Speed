@@ -13,7 +13,7 @@ namespace F1Speed.Core
         public static TelemetryPacket ConvertToPacket(byte[] bytes)
         {
             // Marshal the byte array into the telemetryPacket structure
-            GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
             var stuff = (TelemetryPacket)Marshal.PtrToStructure(
                 handle.AddrOfPinnedObject(), typeof(TelemetryPacket));
             handle.Free();

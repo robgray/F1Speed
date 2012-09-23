@@ -10,7 +10,7 @@ namespace F1Speed.Core
     {
         public static string AsTimeString(this float timeInSeconds)
         {
-            if (timeInSeconds == 0)
+            if (timeInSeconds <= 0)
                 return "0:00.0000";
 
             var ts = TimeSpan.FromSeconds((double) timeInSeconds);

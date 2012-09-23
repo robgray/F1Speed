@@ -52,6 +52,7 @@
     <Compile Include="ExtensionsFixture.cs" />
     <Compile Include="TelemetryLapFixture.cs" />
     <Compile Include="TelemetryLapHelper.cs" />
+    <Compile Include="TelemetryPacketGenerator.cs" />
     <Compile Include="XmlTelemetryLapSerializerFixture.cs" />
     <Compile Include="TelemetryPacketFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

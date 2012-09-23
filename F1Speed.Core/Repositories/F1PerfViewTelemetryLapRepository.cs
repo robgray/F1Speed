@@ -45,6 +45,7 @@ namespace F1Speed.Core.Repositories
                                                                    { "Interlagos", "17" },
                                                                    { "Abu Dahbi", "18" },
                                                                    { "India", "19" },
+                                                                   { "United States (COTA)", "19" },
                                                                };
 
         public void Save(TelemetryLap lap)

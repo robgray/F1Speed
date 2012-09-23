@@ -11,3 +11,16 @@ D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Debug\log4net.xml
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Debug\F1Speed.Tests.dll
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Debug\F1Speed.Tests.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\F1Speed.Tests.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\F1Speed.Tests.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\F1Speed.Core.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\nunit.framework.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\Rhino.Mocks.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\log4net.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\F1Speed.Core.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\nunit.framework.xml
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\Rhino.Mocks.xml
+D:\source\github\f1speed\F1Speed.Tests\bin\Debug\log4net.xml
+D:\source\github\f1speed\F1Speed.Tests\obj\Debug\F1Speed.Tests.csprojResolveAssemblyReference.cache
+D:\source\github\f1speed\F1Speed.Tests\obj\Debug\F1Speed.Tests.dll
+D:\source\github\f1speed\F1Speed.Tests\obj\Debug\F1Speed.Tests.pdb

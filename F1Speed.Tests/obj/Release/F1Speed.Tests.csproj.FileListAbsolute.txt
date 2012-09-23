@@ -9,3 +9,16 @@ D:\source\F1Speed\trunk\src\F1Speed.Tests\bin\Release\Rhino.Mocks.xml
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\ResolveAssemblyReference.cache
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\F1Speed.Tests.dll
 D:\source\F1Speed\trunk\src\F1Speed.Tests\obj\Release\F1Speed.Tests.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\F1Speed.Tests.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\F1Speed.Tests.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\F1Speed.Core.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\nunit.framework.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\Rhino.Mocks.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\log4net.dll
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\F1Speed.Core.pdb
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\nunit.framework.xml
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\Rhino.Mocks.xml
+D:\source\github\f1speed\F1Speed.Tests\bin\Release\log4net.xml
+D:\source\github\f1speed\F1Speed.Tests\obj\Release\F1Speed.Tests.csprojResolveAssemblyReference.cache
+D:\source\github\f1speed\F1Speed.Tests\obj\Release\F1Speed.Tests.dll
+D:\source\github\f1speed\F1Speed.Tests\obj\Release\F1Speed.Tests.pdb
