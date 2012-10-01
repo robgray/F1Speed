@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -13,6 +14,7 @@ using System.Runtime.InteropServices;
 using F1Speed.Core.Repositories;
 using log4net;
 using log4net.Core;
+using System.Collections.Generic;
 
 namespace F1Speed
 {
@@ -75,9 +77,6 @@ namespace F1Speed
             this.Height = 490;
 #endif
             
-            
-            
-
             writeLog("Listing on port " + PORTNUM + " for connections from " +
                          (F1SpeedSettings.AllowConnectionsFromOtherMachines ? "ANY IP" : IP));
             
@@ -272,6 +271,13 @@ namespace F1Speed
             }
             this.Text = string.Format("F1 Speed (v{0})", version);
 
+            CircuitDropDown.Items.Clear();
+            var values = (from display in F1PerfViewTelemetryLapRepository.Tracks
+                         select new { CircuitName = display.Key }).ToList();
+            CircuitDropDown.DataSource = values;
+            CircuitDropDown.DisplayMember = "CircuitName";
+            CircuitDropDown.ValueMember = "CircuitName";
+            
             LapTypeDropDown.SelectedIndex = -1;
             CircuitDropDown.SelectedIndex = -1;
 

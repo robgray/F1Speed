@@ -6,8 +6,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <local:DashboardBootstrapper x:Key="bootstrapper" />
+                    <local:DashboardBootstrapper x:Key="bootstrapper" />                    
                 </ResourceDictionary>
+                <ResourceDictionary Source="/Assets/ResourceDictionaries/Converters.xaml" />
+                <ResourceDictionary Source="/Assets/ResourceDictionaries/BaseStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>        
     </Application.Resources>

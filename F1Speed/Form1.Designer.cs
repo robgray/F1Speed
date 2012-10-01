@@ -309,29 +309,6 @@
             this.CircuitDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CircuitDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CircuitDropDown.FormattingEnabled = true;
-            this.CircuitDropDown.Items.AddRange(new object[] {
-            "Bahrain",
-            "Australia",
-            "Malaysia",
-            "Shanghai",
-            "Barcelona",
-            "Monaco",
-            "Turkey",
-            "Canda",
-            "Valencia",
-            "Britian",
-            "Hockenheimring",
-            "Nurburgring",
-            "Belgium",
-            "Italy",
-            "Singapore",
-            "Japan",
-            "Korea",
-            "Brazil",
-            "Interlagos",
-            "Abu Dahbi",
-            "India",
-            "United States"});
             this.CircuitDropDown.Location = new System.Drawing.Point(93, 16);
             this.CircuitDropDown.Name = "CircuitDropDown";
             this.CircuitDropDown.Size = new System.Drawing.Size(289, 37);

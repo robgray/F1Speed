@@ -22,10 +22,10 @@ namespace F1Speed.Core.Repositories
             fileSystem = fileSystemFacade;
         }
         
-        private IDictionary<string, string> trackNumbers = new Dictionary<string, string>
+        public static IDictionary<string, string> Tracks = new Dictionary<string, string>
                                                                {
                                                                    { "Australia", "1" },
-                                                                   { "Bahrain", "19" },
+                                                                   { "Bahrain", "22" },
                                                                    { "Malaysia", "2" },
                                                                    { "Shanghai", "3" },
                                                                    { "Barcelona", "4" },
@@ -46,7 +46,7 @@ namespace F1Speed.Core.Repositories
                                                                    { "Interlagos", "17" },
                                                                    { "Abu Dahbi", "18" },
                                                                    { "India", "19" },
-                                                                   { "United States (COTA)", "19" },
+                                                                   { "United States (COTA)", "23" },
                                                                };
 
         public void Save(TelemetryLap lap)
@@ -117,7 +117,7 @@ namespace F1Speed.Core.Repositories
 
         private string GetTrackNumber(TelemetryLap lap)
         {
-            return trackNumbers[lap.CircuitName];
+            return Tracks[lap.CircuitName];
         }
 
         private IEnumerable<string> GetPacketData(TelemetryLap lap)
