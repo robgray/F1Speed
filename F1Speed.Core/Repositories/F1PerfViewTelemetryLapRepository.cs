@@ -40,6 +40,7 @@ namespace F1Speed.Core.Repositories
                                                                    { "Belgium", "12" },
                                                                    { "Italy", "13" },
                                                                    { "Singapore", "14" },
+                                                                   { "Japan", "21" },
                                                                    { "Korea", "15" },
                                                                    { "Brazil", "16" },
                                                                    { "Interlagos", "17" },
