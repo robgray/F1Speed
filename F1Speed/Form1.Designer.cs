@@ -325,6 +325,7 @@
             "Belgium",
             "Italy",
             "Singapore",
+            "Japan",
             "Korea",
             "Brazil",
             "Interlagos",
