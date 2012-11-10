@@ -317,7 +317,7 @@
             "Barcelona",
             "Monaco",
             "Turkey",
-            "Canda",
+            "Canada",
             "Valencia",
             "Britian",
             "Hockenheimring",
