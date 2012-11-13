@@ -301,13 +301,13 @@ namespace F1Speed
         private void CircuitDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CircuitDropDown.SelectedItem == null || LapTypeDropDown.SelectedItem == null || manager.ComparisonMode == ComparisonModeEnum.Reference) return;
-            manager.ChangeCircuit(CircuitDropDown.SelectedItem.ToString(), LapTypeDropDown.SelectedItem.ToString());                 
+            manager.ChangeCircuit(CircuitDropDown.SelectedValue.ToString(), LapTypeDropDown.SelectedItem.ToString());                 
         }
 
         private void LapTypeDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CircuitDropDown.SelectedItem == null || LapTypeDropDown.SelectedItem == null || manager.ComparisonMode == ComparisonModeEnum.Reference) return;
-            manager.ChangeCircuit(CircuitDropDown.SelectedItem.ToString(), LapTypeDropDown.SelectedItem.ToString());
+            manager.ChangeCircuit(CircuitDropDown.SelectedValue.ToString(), LapTypeDropDown.SelectedItem.ToString());
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)

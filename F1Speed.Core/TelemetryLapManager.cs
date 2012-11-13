@@ -19,7 +19,7 @@ namespace F1Speed.Core
     
     public class TelemetryLapManager
     {
-        private static ILog logger = Logger.Create();
+        private readonly static ILog logger = Logger.Create();
 
         private string _circuitName;
         private string _lapType;
