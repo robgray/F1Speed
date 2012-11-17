@@ -19,5 +19,18 @@ namespace F1Speed.Core
             handle.Free();
             return stuff;
         }
+
+        public static byte[] ConvertPacketToByteArray(TelemetryPacket packet)
+        {
+            int size = Marshal.SizeOf(packet);
+            byte[] arr = new byte[size];
+            IntPtr ptr = Marshal.AllocHGlobal(size);
+
+            Marshal.StructureToPtr(packet, ptr, true);
+            Marshal.Copy(ptr, arr, 0, size);
+            Marshal.FreeHGlobal(ptr);
+
+            return arr;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using F1Speed.Core;
 
@@ -44,9 +45,20 @@ namespace F1Speed.Tests
 
                 return ++_packetNumber*frequency;
             }
-
         }
 
+        public TelemetryPacket GetPacket()
+        {
+            // inspect each property and fill with crap
+            var packet = new TelemetryPacket();
+            ValueType vThis = packet;
+            var fields = packet.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);            
+            for (var i = 0; i < fields.Count(); i++)
+            {                
+                fields[i].SetValue(vThis, 10);
+            }
 
+            return (TelemetryPacket)vThis;
+        }
     }
 }

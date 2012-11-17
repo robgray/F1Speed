@@ -143,6 +143,23 @@ namespace F1Speed.Core
             get { return LatestPacket.Brake; }
         }
 
+        public float CurrentWheelSpin(int wheel)
+        {
+            switch (wheel)
+            {
+                case 0:
+                    return LatestPacket.WheelSpeedFrontLeft - LatestPacket.Speed;
+                case 1:
+                    return LatestPacket.WheelSpeedFrontRight - LatestPacket.Speed;
+                case 2:
+                    return LatestPacket.WheelSpeedBackLeft - LatestPacket.Speed;
+                case 3:
+                    return LatestPacket.WheelSpeedBackRight - LatestPacket.Speed;
+                default:
+                    return 0.0f;
+            }
+        }
+
         public void ChangeCircuit(string circuitName, string lapType)
         {
             logger.Info("Current circuit changed to " + circuitName + " '" + lapType + "'");

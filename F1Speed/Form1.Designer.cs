@@ -70,6 +70,11 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogBox = new System.Windows.Forms.ListBox();
+            this.BackRightWheelSpin = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.FrontRightWheelSpin = new System.Windows.Forms.Label();
+            this.FrontLeftWheelSpin = new System.Windows.Forms.Label();
+            this.BackLeftWheelSpin = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.BarGroup.SuspendLayout();
@@ -112,7 +117,7 @@
             this.groupBox1.Controls.Add(this.DeltaLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 203);
+            this.groupBox1.Size = new System.Drawing.Size(409, 203);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -125,9 +130,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.ComparisonLapLabel);
             this.groupBox2.Controls.Add(this.ComparisonModeLabel);
-            this.groupBox2.Location = new System.Drawing.Point(469, 99);
+            this.groupBox2.Location = new System.Drawing.Point(524, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(454, 200);
+            this.groupBox2.Size = new System.Drawing.Size(399, 200);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
@@ -486,12 +491,69 @@
             this.LogBox.Size = new System.Drawing.Size(909, 384);
             this.LogBox.TabIndex = 11;
             // 
+            // BackRightWheelSpin
+            // 
+            this.BackRightWheelSpin.BackColor = System.Drawing.Color.Yellow;
+            this.BackRightWheelSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackRightWheelSpin.ForeColor = System.Drawing.Color.White;
+            this.BackRightWheelSpin.Location = new System.Drawing.Point(488, 225);
+            this.BackRightWheelSpin.Name = "BackRightWheelSpin";
+            this.BackRightWheelSpin.Size = new System.Drawing.Size(30, 74);
+            this.BackRightWheelSpin.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(431, 185);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 23);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Wheelspin";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // FrontRightWheelSpin
+            // 
+            this.FrontRightWheelSpin.BackColor = System.Drawing.Color.Yellow;
+            this.FrontRightWheelSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrontRightWheelSpin.ForeColor = System.Drawing.Color.White;
+            this.FrontRightWheelSpin.Location = new System.Drawing.Point(488, 106);
+            this.FrontRightWheelSpin.Name = "FrontRightWheelSpin";
+            this.FrontRightWheelSpin.Size = new System.Drawing.Size(30, 74);
+            this.FrontRightWheelSpin.TabIndex = 13;
+            // 
+            // FrontLeftWheelSpin
+            // 
+            this.FrontLeftWheelSpin.BackColor = System.Drawing.Color.Yellow;
+            this.FrontLeftWheelSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrontLeftWheelSpin.ForeColor = System.Drawing.Color.White;
+            this.FrontLeftWheelSpin.Location = new System.Drawing.Point(427, 106);
+            this.FrontLeftWheelSpin.Name = "FrontLeftWheelSpin";
+            this.FrontLeftWheelSpin.Size = new System.Drawing.Size(30, 74);
+            this.FrontLeftWheelSpin.TabIndex = 12;
+            // 
+            // BackLeftWheelSpin
+            // 
+            this.BackLeftWheelSpin.BackColor = System.Drawing.Color.Yellow;
+            this.BackLeftWheelSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackLeftWheelSpin.ForeColor = System.Drawing.Color.White;
+            this.BackLeftWheelSpin.Location = new System.Drawing.Point(427, 225);
+            this.BackLeftWheelSpin.Name = "BackLeftWheelSpin";
+            this.BackLeftWheelSpin.Size = new System.Drawing.Size(30, 74);
+            this.BackLeftWheelSpin.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(935, 862);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.BackRightWheelSpin);
+            this.Controls.Add(this.BackLeftWheelSpin);
+            this.Controls.Add(this.FrontRightWheelSpin);
+            this.Controls.Add(this.FrontLeftWheelSpin);
             this.Controls.Add(this.LogBox);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
@@ -562,5 +624,10 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ListBox LogBox;
+        private System.Windows.Forms.Label BackRightWheelSpin;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label FrontRightWheelSpin;
+        private System.Windows.Forms.Label FrontLeftWheelSpin;
+        private System.Windows.Forms.Label BackLeftWheelSpin;
     }
 }

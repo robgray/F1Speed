@@ -29,7 +29,7 @@ namespace F1Speed
         private const string IP = "127.0.0.1";
         private const int TIMERINTERVAL_MS = 100;        // refresh display every 10th of a sec
 
-        // This is the IP endpoint we are connecting to (i.e. the IP and Port F1 2011 is sending to)
+        // This is the IP endpoint we are connecting to (i.e. the IP Address and Port F1 2012 is sending to)
         //private IPEndPoint remoteIP = new IPEndPoint(IPAddress.Parse(IP), PORTNUM);        
         private IPEndPoint remoteIP;
         // This is the IP endpoint for capturing who actually sent the data
@@ -186,6 +186,7 @@ namespace F1Speed
             
             UpdateTimeDelta(manager.GetTimeDelta());
             UpdateThrottleBrake(manager.CurrentThrottle, manager.CurrentBrake);
+            UpdateWheelSpin(manager.CurrentWheelSpin(0), manager.CurrentWheelSpin(1), manager.CurrentWheelSpin(2), manager.CurrentWheelSpin(3));
 
             TransmissionLabel.BackColor = Color.Transparent;
 
@@ -209,6 +210,29 @@ namespace F1Speed
             BrakeBar.Location = new Point(21, 81 - BrakeBar.Height);
             ThrottleBar.Location = new Point(88, 81 - ThrottleBar.Height);
         }
+
+        private void UpdateWheelSpin(float fl, float fr, float rl, float rr)
+        {
+            const float MaxHeight = 75;
+            const float scale = 20.0f;
+
+            /* normalize wheel speeds */
+            fl = Math.Min(Math.Abs(fl / scale), 1);
+            fr = Math.Min(Math.Abs(fr / scale), 1);
+            rl = Math.Min(Math.Abs(rl / scale), 1);
+            rr = Math.Min(Math.Abs(rr / scale), 1);
+
+            FrontLeftWheelSpin.Height = (int)(MaxHeight * fl);
+            FrontRightWheelSpin.Height = (int)(MaxHeight * fr);
+            BackLeftWheelSpin.Height = (int)(MaxHeight * rl);
+            BackRightWheelSpin.Height = (int)(MaxHeight * rr);
+
+            FrontLeftWheelSpin.Location = new Point(FrontLeftWheelSpin.Location.X, 75 + 106 - FrontLeftWheelSpin.Height);
+            FrontRightWheelSpin.Location = new Point(FrontRightWheelSpin.Location.X, 75 + 106 - FrontRightWheelSpin.Height);
+            BackLeftWheelSpin.Location = new Point(BackLeftWheelSpin.Location.X, 75 + 225 - BackLeftWheelSpin.Height);
+            BackRightWheelSpin.Location = new Point(BackRightWheelSpin.Location.X, 75 + 225 - BackRightWheelSpin.Height);
+        }
+
 
         private void UpdateTimeDelta(float timeDelta)
         {
@@ -405,6 +429,11 @@ namespace F1Speed
         {
             var optionsForm = new OptionsForm();
             optionsForm.ShowDialog(this);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }                 
     }
 }
