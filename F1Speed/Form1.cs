@@ -57,12 +57,11 @@ namespace F1Speed
         //[return: MarshalAs(UnmanagedType.Bool)]
         //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
-        public Form1()
+        public Form1(TelemetryLapManager telemetryLapManager)
         {
             InitializeComponent();
-
-
-            manager = new TelemetryLapManager();
+            
+            manager = telemetryLapManager;
 #if DEBUG
             this.Height = 900;
 
@@ -76,7 +75,7 @@ namespace F1Speed
 #else
             this.Height = 490;
 #endif
-            
+                
             writeLog("Listing on port " + PORTNUM + " for connections from " +
                          (F1SpeedSettings.AllowConnectionsFromOtherMachines ? "ANY IP" : IP));
             

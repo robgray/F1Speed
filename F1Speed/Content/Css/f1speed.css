@@ -1,0 +1,22 @@
+﻿*, html, body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.positive {
+    color: green;
+}
+.negative {
+    color: red;
+}
+
+h4 { 
+    color: #cccccc;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.numeric-delta {
+    font-size: 125px;
+    line-height: 130px;    
+}

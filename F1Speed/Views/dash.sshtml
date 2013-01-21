@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>@Model.Title</title>
+    <link rel="stylesheet" type="text/css" href="/content/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/content/css/f1speed.css" />
+
+    <script type="text/javascript" src="/content/scripts/modernizr-2.6.2.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+		<div class="row-fluid">
+		  <div class="span3">
+			<h4>Speed Delta</h4>
+			<div class="numeric-delta" data-bind="text: speedDelta, css: speedClass"></div>
+		  </div>
+		  <div class="span3">
+			<h4>Time Delta</h4>
+			<div class="numeric-delta" data-bind="text: timeDelta, css: timeClass"></div>
+		  </div>
+		</div>
+	</div>
+    <script type="text/javascript" src="/content/scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/content/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/content/scripts/knockout-2.2.0.debug.js"></script>
+    <script type="text/javascript" src="/content/scripts/dash-vm.js"></script>
+    <script>
+      $(document).ready(function() {
+          ko.applyBindings(DashViewModel)
+      });
+    </script>
+  </body>
+</html>
