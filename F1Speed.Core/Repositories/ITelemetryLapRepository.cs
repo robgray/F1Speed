@@ -7,7 +7,7 @@ namespace F1Speed.Core.Repositories
 {
     public interface ITelemetryLapRepository
     {
-        TelemetryLap Get(string circuitName, string lapType);
+        TelemetryLap Get(Circuit circuit, string lapType);
         void Save(TelemetryLap lap);        
         void Delete(TelemetryLap lap);
     }

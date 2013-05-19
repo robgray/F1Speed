@@ -186,6 +186,9 @@
     <Content Include="Content\Scripts\dash-vm.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Scripts\knockout.bindings.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Scripts\modernizr-2.6.2.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

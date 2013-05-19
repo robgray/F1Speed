@@ -46,13 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circuit.cs" />
+    <Compile Include="CircuitChangedEventArgs.cs" />
     <Compile Include="CompletedFullLapEventArgs.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="F1SpeedSettings.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="LapEventArgs.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="PacketEventArgs.cs" />
     <Compile Include="Repositories\BinaryTelemetryLapRepository.cs" />
+    <Compile Include="Repositories\CircuitRepository.cs" />
     <Compile Include="Repositories\CsvTelemetryLapRepository.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Repositories\F1PerfViewTelemetryLapRepository.cs" />

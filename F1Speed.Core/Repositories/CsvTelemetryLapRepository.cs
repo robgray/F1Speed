@@ -116,7 +116,7 @@ namespace F1Speed.Core.Repositories
             return data;
         }
 
-        public override TelemetryLap Get(string circuitName, string lapType)
+        public override TelemetryLap Get(Circuit circuit, string lapType)
         {
             throw new NotImplementedException();
         }

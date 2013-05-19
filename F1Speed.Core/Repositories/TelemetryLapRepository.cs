@@ -32,18 +32,18 @@ namespace F1Speed.Core.Repositories
 
         public abstract void Save(TelemetryLap lap);
 
-        public abstract TelemetryLap Get(string circuitName, string lapType);
+        public abstract TelemetryLap Get(Circuit circuit, string lapType);
 
         public abstract string GetFileExtension();
 
         protected virtual string GetFileName(TelemetryLap lap)
         {
-            return GetFileName(lap.CircuitName, lap.LapType);
+            return GetFileName(lap.Circuit, lap.LapType);
         }
 
-        protected virtual string GetFileName(string circuitName, string lapType)
+        protected virtual string GetFileName(Circuit circuit, string lapType)
         {                        
-            return string.Format(@"{0}\{1}_FL_{2}.{3}", DataFolder(), circuitName, lapType, GetFileExtension());
+            return string.Format(@"{0}\{1}_FL_{2}.{3}", DataFolder(), circuit.Filename, lapType, GetFileExtension());
         }
 
         public void Delete(TelemetryLap lap)

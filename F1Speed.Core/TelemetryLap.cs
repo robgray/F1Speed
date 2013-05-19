@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Xml.Serialization;
+using F1Speed.Core.Repositories;
 
 namespace F1Speed.Core
 {
@@ -15,17 +16,21 @@ namespace F1Speed.Core
             
         }
 
-        public TelemetryLap(string circuitName, string lapType)
+        public TelemetryLap(Circuit circuit, string lapType)
         {
             Packets = new List<TelemetryPacket>();
-            CircuitName = circuitName;
+            Circuit = circuit;
             LapType = lapType;
         }
 
-        public TelemetryLap(SerializationInfo info, StreamingContext context) 
+        public Circuit Circuit { get; private set; }
+
+        public TelemetryLap(SerializationInfo info, StreamingContext context)
         {
+            var trackLength = info.GetValue<float>("LapTrackLength");
+
             Packets = info.GetValue<List<TelemetryPacket>>("Packets");
-            CircuitName = info.GetValue<string>("CircuitName");
+            Circuit = CircuitRepository.GetByTrackLength(trackLength);
             LapType = info.GetValue<string>("LapType");
             try
             {
@@ -46,11 +51,9 @@ namespace F1Speed.Core
             set { _packets = value; }
         }
 
-        private string _circuitName;
         public string CircuitName 
         {
-            get { return _circuitName; }
-            set { _circuitName = value; }
+            get { return Circuit.Name; }        
         }
 
         private string _lapType;
@@ -117,7 +120,9 @@ namespace F1Speed.Core
         
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("CircuitName", _circuitName);
+            float lapTrackLength = ((int)(Circuit.TrackLength*1000))/1000f;
+            
+            info.AddValue("LapTrackLength", lapTrackLength);
             info.AddValue("LapType", _lapType);
             info.AddValue("Packets", _packets);
             info.AddValue("HasFinished", _hasFinished);            

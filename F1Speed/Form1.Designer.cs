@@ -48,9 +48,7 @@
             this.ControlsGroup = new System.Windows.Forms.GroupBox();
             this.TransmissionLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.LapTypeDropDown = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.CircuitDropDown = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.ThrottleBar = new System.Windows.Forms.Label();
@@ -71,10 +69,15 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogBox = new System.Windows.Forms.ListBox();
             this.BackRightWheelSpin = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.WheelspinLabel = new System.Windows.Forms.Label();
             this.FrontRightWheelSpin = new System.Windows.Forms.Label();
             this.FrontLeftWheelSpin = new System.Windows.Forms.Label();
             this.BackLeftWheelSpin = new System.Windows.Forms.Label();
+            this.cboField = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.FieldValueLabel = new System.Windows.Forms.Label();
+            this.CircuitLabel = new System.Windows.Forms.Label();
+            this.LapTypeLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.BarGroup.SuspendLayout();
@@ -247,11 +250,11 @@
             // 
             // ControlsGroup
             // 
+            this.ControlsGroup.Controls.Add(this.LapTypeLabel);
+            this.ControlsGroup.Controls.Add(this.CircuitLabel);
             this.ControlsGroup.Controls.Add(this.TransmissionLabel);
             this.ControlsGroup.Controls.Add(this.label2);
-            this.ControlsGroup.Controls.Add(this.LapTypeDropDown);
             this.ControlsGroup.Controls.Add(this.label4);
-            this.ControlsGroup.Controls.Add(this.CircuitDropDown);
             this.ControlsGroup.Controls.Add(this.label3);
             this.ControlsGroup.Location = new System.Drawing.Point(12, 33);
             this.ControlsGroup.Name = "ControlsGroup";
@@ -280,24 +283,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Tx";
             // 
-            // LapTypeDropDown
-            // 
-            this.LapTypeDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LapTypeDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LapTypeDropDown.FormattingEnabled = true;
-            this.LapTypeDropDown.Items.AddRange(new object[] {
-            "Practice",
-            "Qualifying",
-            "Race",
-            "Time Trial",
-            "On-line Qualifying",
-            "On-line Race"});
-            this.LapTypeDropDown.Location = new System.Drawing.Point(473, 16);
-            this.LapTypeDropDown.Name = "LapTypeDropDown";
-            this.LapTypeDropDown.Size = new System.Drawing.Size(351, 37);
-            this.LapTypeDropDown.TabIndex = 7;
-            this.LapTypeDropDown.SelectedIndexChanged += new System.EventHandler(this.LapTypeDropDown_SelectedIndexChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -308,17 +293,6 @@
             this.label4.Size = new System.Drawing.Size(59, 26);
             this.label4.TabIndex = 6;
             this.label4.Text = "Type";
-            // 
-            // CircuitDropDown
-            // 
-            this.CircuitDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CircuitDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CircuitDropDown.FormattingEnabled = true;
-            this.CircuitDropDown.Location = new System.Drawing.Point(93, 16);
-            this.CircuitDropDown.Name = "CircuitDropDown";
-            this.CircuitDropDown.Size = new System.Drawing.Size(289, 37);
-            this.CircuitDropDown.TabIndex = 5;
-            this.CircuitDropDown.SelectedIndexChanged += new System.EventHandler(this.CircuitDropDown_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -501,17 +475,16 @@
             this.BackRightWheelSpin.Size = new System.Drawing.Size(30, 74);
             this.BackRightWheelSpin.TabIndex = 15;
             // 
-            // label13
+            // WheelspinLabel
             // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(431, 185);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 23);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Wheelspin";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.WheelspinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WheelspinLabel.ForeColor = System.Drawing.Color.White;
+            this.WheelspinLabel.Location = new System.Drawing.Point(431, 190);
+            this.WheelspinLabel.Name = "WheelspinLabel";
+            this.WheelspinLabel.Size = new System.Drawing.Size(85, 23);
+            this.WheelspinLabel.TabIndex = 16;
+            this.WheelspinLabel.Text = "Wheelspin";
+            this.WheelspinLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrontRightWheelSpin
             // 
@@ -543,13 +516,67 @@
             this.BackLeftWheelSpin.Size = new System.Drawing.Size(30, 74);
             this.BackLeftWheelSpin.TabIndex = 14;
             // 
+            // cboField
+            // 
+            this.cboField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboField.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(108, 848);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(289, 37);
+            this.cboField.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(28, 854);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 26);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Field";
+            // 
+            // FieldValueLabel
+            // 
+            this.FieldValueLabel.AutoSize = true;
+            this.FieldValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FieldValueLabel.ForeColor = System.Drawing.Color.White;
+            this.FieldValueLabel.Location = new System.Drawing.Point(417, 840);
+            this.FieldValueLabel.Name = "FieldValueLabel";
+            this.FieldValueLabel.Size = new System.Drawing.Size(0, 51);
+            this.FieldValueLabel.TabIndex = 19;
+            // 
+            // CircuitLabel
+            // 
+            this.CircuitLabel.AutoSize = true;
+            this.CircuitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CircuitLabel.ForeColor = System.Drawing.Color.White;
+            this.CircuitLabel.Location = new System.Drawing.Point(92, 16);
+            this.CircuitLabel.Name = "CircuitLabel";
+            this.CircuitLabel.Size = new System.Drawing.Size(0, 37);
+            this.CircuitLabel.TabIndex = 10;
+            // 
+            // LapTypeLabel
+            // 
+            this.LapTypeLabel.AutoSize = true;
+            this.LapTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LapTypeLabel.ForeColor = System.Drawing.Color.White;
+            this.LapTypeLabel.Location = new System.Drawing.Point(473, 16);
+            this.LapTypeLabel.Name = "LapTypeLabel";
+            this.LapTypeLabel.Size = new System.Drawing.Size(0, 37);
+            this.LapTypeLabel.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(935, 862);
-            this.Controls.Add(this.label13);
+            this.ClientSize = new System.Drawing.Size(935, 897);
+            this.Controls.Add(this.FieldValueLabel);
+            this.Controls.Add(this.cboField);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.WheelspinLabel);
             this.Controls.Add(this.BackRightWheelSpin);
             this.Controls.Add(this.BackLeftWheelSpin);
             this.Controls.Add(this.FrontRightWheelSpin);
@@ -597,8 +624,6 @@
         private System.Windows.Forms.Label TimeDeltaLabel;
         private System.Windows.Forms.GroupBox ControlsGroup;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CircuitDropDown;
-        private System.Windows.Forms.ComboBox LapTypeDropDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label ThrottleBar;
@@ -625,9 +650,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ListBox LogBox;
         private System.Windows.Forms.Label BackRightWheelSpin;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label WheelspinLabel;
         private System.Windows.Forms.Label FrontRightWheelSpin;
         private System.Windows.Forms.Label FrontLeftWheelSpin;
         private System.Windows.Forms.Label BackLeftWheelSpin;
+        private System.Windows.Forms.ComboBox cboField;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label FieldValueLabel;
+        private System.Windows.Forms.Label LapTypeLabel;
+        private System.Windows.Forms.Label CircuitLabel;
     }
 }

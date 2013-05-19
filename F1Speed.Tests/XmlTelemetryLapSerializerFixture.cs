@@ -24,7 +24,7 @@ namespace F1Speed.Tests
         public void Can_deserialize_lap()
         {
             var serializer = new XmlTelemetryLapRepository();
-            var lap = serializer.Get("test", "testtype");            
+            var lap = serializer.Get(Circuit.NullCircuit, "testtype");            
         }
     }
 }

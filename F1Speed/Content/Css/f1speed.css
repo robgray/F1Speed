@@ -3,6 +3,13 @@
     color: #FFFFFF;
 }
 
+header {
+    padding: 20px 0;
+}
+
+.neutral {
+    color: white;
+}
 .positive {
     color: green;
 }
@@ -20,3 +27,43 @@ h4 {
     font-size: 125px;
     line-height: 130px;    
 }
+
+.circuitDetails {
+    font-size: 26px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.wheelspincontainer {
+    position: relative;
+    height: 120px;
+    width: 70px;
+}
+.wheelspin {
+    background-color: yellow;
+    position: absolute;
+    bottom: 0;    
+    height: 75px;
+    width: 30px;
+}
+
+.wheelspin.left { left: 0; }
+.wheelspin.right { right: 0; }
+
+.pedalcontainer {
+    float: left;    
+    position: relative;
+    height: 110px;
+    width: 50px;
+}
+
+.pedal {
+    position: absolute;
+    bottom: 0;
+    width: 35px;
+    height: 75px;
+    left: 0;
+}
+
+.pedal.brake { background-color: red }
+.pedal.throttle { background-color: green }

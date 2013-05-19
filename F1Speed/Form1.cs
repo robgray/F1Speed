@@ -22,8 +22,10 @@ namespace F1Speed
     {
         private delegate void WriteLogCallback(string text);
 
+        private delegate void UpdateCircuitCallback(string circuitName, string lapType);
+
         private static ILog logger = Logger.Create();
-        
+
         // Constants
         private const int PORTNUM = 20777;
         private const string IP = "127.0.0.1";
@@ -52,7 +54,7 @@ namespace F1Speed
         const UInt32 SWP_NOSIZE = 0x0001;
         const UInt32 SWP_NOMOVE = 0x0002;
         const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
-        
+
         //[DllImport("user32.dll")]
         //[return: MarshalAs(UnmanagedType.Bool)]
         //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
@@ -60,10 +62,24 @@ namespace F1Speed
         public Form1(TelemetryLapManager telemetryLapManager)
         {
             InitializeComponent();
+
             
             manager = telemetryLapManager;
+
+            var type = typeof(TelemetryPacket);
+            var fields = type.GetFields();
+            cboField.Items.Clear();
+            foreach (var field in fields)
+            {
+                cboField.Items.Add(field.Name);
+            }
+
+            cboField.SelectedIndex = 0; // default to first item
+
+            manager.CircuitChanged += (s, e) => UpdateCircuitName(e.CircuitName, e.LapType);
+
 #if DEBUG
-            this.Height = 900;
+            this.Height = 980;
 
             manager.CompletedFullLap += (s, e) => writeLog(string.Format("Completed Full Lap.  Last={0}...Current={1}", e.PreviousLapNumber, e.CurrentLapNumber));
             manager.RemovedLap += (s, e) => writeLog(string.Format("Removed Lap. Number={0}", e.Lap != null ? e.Lap.LapNumber : -1));
@@ -72,6 +88,7 @@ namespace F1Speed
             manager.StartedOutLap += (s, e) => writeLog("Started Out Lap");
             manager.SetFastestLap += (s, e) => writeLog(string.Format("Set Fastest Lap={0}", e.Lap.LapTime.AsTimeString()));
             manager.PacketProcessed += (s, e) => writeLog(string.Format("Packet: {0}", e.Packet));
+            
 #else
             this.Height = 490;
 #endif
@@ -120,10 +137,10 @@ namespace F1Speed
             if (telemCaptureThread == null)
             {
                 // Kick off a thread to start collecting data
-                telemCaptureThread = new Thread(FetchData);                
+                telemCaptureThread = new Thread(FetchData);
                 telemCaptureThread.Start();
                 writeLog("Starting capture...");
-                
+
                 // Kick off the timer to control screen updates
                 timer1.Interval = TIMERINTERVAL_MS;
                 timer1.Enabled = true;
@@ -137,7 +154,7 @@ namespace F1Speed
         private void FetchData()
         {
             while (true)
-            {                
+            {
                 // Get the data (this will block until we get a packet)
                 Byte[] receiveBytes = udpSocket.Receive(ref senderIP);
 
@@ -151,7 +168,7 @@ namespace F1Speed
                 manager.ProcessIncomingPacket(latestData);
 
                 //TransmissionLabel.BackColor = Color.Red;
-                
+
                 // Release the lock again
                 syncMutex.ReleaseMutex();
             }
@@ -167,13 +184,19 @@ namespace F1Speed
             // Wait for mutex lock
             syncMutex.WaitOne();
 
+            if (!string.IsNullOrEmpty(cboField.SelectedItem.ToString()))
+            {
+                FieldValueLabel.Text = manager.GetCurrentData(cboField.SelectedItem.ToString());
+            }
+
             // Update the display
             var delta = manager.GetSpeedDelta();
             DeltaLabel.Text = delta;
             if (delta != "--")
             {
                 DeltaLabel.ForeColor = delta.Substring(0, 1) == "+" ? Color.Green : Color.Red;
-            } else
+            }
+            else
             {
                 DeltaLabel.ForeColor = Color.White;
             }
@@ -182,17 +205,17 @@ namespace F1Speed
             ComparisonLapLabel.Text = manager.ComparisonLapTime;
             CurrentLapLabel.Text = manager.CurrentLapTime;
             AverageLapLabel.Text = manager.AverageLapTime;
-            
+
             UpdateTimeDelta(manager.GetTimeDelta());
             UpdateThrottleBrake(manager.CurrentThrottle, manager.CurrentBrake);
-            UpdateWheelSpin(manager.CurrentWheelSpin(0), manager.CurrentWheelSpin(1), manager.CurrentWheelSpin(2), manager.CurrentWheelSpin(3));
+            UpdateWheelSpin(manager.CurrentWheelSpin(WheelspinWheel.FrontLeft), manager.CurrentWheelSpin(WheelspinWheel.FrontRight), manager.CurrentWheelSpin(WheelspinWheel.RearLeft), manager.CurrentWheelSpin(WheelspinWheel.RearRight));
 
             TransmissionLabel.BackColor = Color.Transparent;
 
 
             // Release the lock
             syncMutex.ReleaseMutex();
-           
+
             Application.DoEvents();
 
             // Restart the timer
@@ -271,7 +294,7 @@ namespace F1Speed
         private void writeLog(string log)
         {
             if (this.LogBox.InvokeRequired)
-            {                
+            {
                 this.BeginInvoke(new WriteLogCallback(writeLog), new object[] { log });
             }
             else
@@ -281,7 +304,18 @@ namespace F1Speed
                     LogBox.Items.RemoveAt(LogBox.Items.Count - 1);
 
                 logger.Info(log);
-            }            
+            }
+        }
+
+        private void UpdateCircuitName(string circuitName, string lapType)
+        {
+            if (this.CircuitLabel.InvokeRequired)
+                this.BeginInvoke(new UpdateCircuitCallback(UpdateCircuitName), new object[] {circuitName, lapType});
+            else
+            {
+                CircuitLabel.Text = circuitName;
+                LapTypeLabel.Text = lapType;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -294,18 +328,8 @@ namespace F1Speed
             }
             this.Text = string.Format("F1 Speed (v{0})", version);
 
-            CircuitDropDown.Items.Clear();
-            var values = (from display in F1PerfViewTelemetryLapRepository.Tracks
-                         select new { CircuitName = display.Key }).ToList();
-            CircuitDropDown.DataSource = values;
-            CircuitDropDown.DisplayMember = "CircuitName";
-            CircuitDropDown.ValueMember = "CircuitName";
-            
-            LapTypeDropDown.SelectedIndex = -1;
-            CircuitDropDown.SelectedIndex = -1;
-
             TransmissionLabel.BackColor = Color.Red;
-                
+
             //SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);            
         }
 
@@ -313,26 +337,14 @@ namespace F1Speed
         {
             udpSocket.Close();
             if (telemCaptureThread != null)
-            {                
-                telemCaptureThread.Abort();                
+            {
+                telemCaptureThread.Abort();
                 telemCaptureThread = null;
             }
             timer1.Stop();
             Application.Exit();
         }
-
-        private void CircuitDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CircuitDropDown.SelectedItem == null || LapTypeDropDown.SelectedItem == null || manager.ComparisonMode == ComparisonModeEnum.Reference) return;
-            manager.ChangeCircuit(CircuitDropDown.SelectedValue.ToString(), LapTypeDropDown.SelectedItem.ToString());                 
-        }
-
-        private void LapTypeDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CircuitDropDown.SelectedItem == null || LapTypeDropDown.SelectedItem == null || manager.ComparisonMode == ComparisonModeEnum.Reference) return;
-            manager.ChangeCircuit(CircuitDropDown.SelectedValue.ToString(), LapTypeDropDown.SelectedItem.ToString());
-        }
-
+        
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.f1speedguides.com/f1speed/");
@@ -353,48 +365,49 @@ namespace F1Speed
             }
 
             var saveDialog = new SaveFileDialog
-                                 {
-                                     Filter = "F1Speed|*.f1s",
-                                     Title = "Export Fastest Lap",
-                                     FileName = manager.FastestLap.CircuitName + "_" + manager.FastestLap.LapType + ".f1s"
-                                 };
+            {
+                Filter = "F1Speed|*.f1s",
+                Title = "Export Fastest Lap",
+                FileName = manager.FastestLap.CircuitName + "_" + manager.FastestLap.LapType + ".f1s"
+            };
             var result = saveDialog.ShowDialog();
 
             if (result == DialogResult.OK && !string.IsNullOrEmpty(saveDialog.FileName))
-            {                
+            {
                 var fileRepo = new BinaryTelemetryLapRepository();
-                fileRepo.Save(manager.FastestLap, saveDialog.FileName);                
+                fileRepo.Save(manager.FastestLap, saveDialog.FileName);
             }
         }
 
         private void importCompareLapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openDialog = new OpenFileDialog
-                                 {
-                                     Filter = "F1Speed|*.f1s",
-                                     Title = "Import Reference Lap",
-                                     Multiselect = false
-                                 };
+            {
+                Filter = "F1Speed|*.f1s",
+                Title = "Import Reference Lap",
+                Multiselect = false
+            };
             var result = openDialog.ShowDialog();
 
-            if (result == DialogResult.OK && !string.IsNullOrEmpty(openDialog.FileName))                        
+            if (result == DialogResult.OK && !string.IsNullOrEmpty(openDialog.FileName))
             {
                 var fileRepo = new BinaryTelemetryLapRepository();
 
                 var lap = fileRepo.Get(openDialog.FileName);
                 if (lap != null)
                 {
-                    manager.SetReferenceLap(lap);                    
-                    CircuitDropDown.SelectedIndex = CircuitDropDown.FindString(manager.ReferenceLap.CircuitName);
-                    LapTypeDropDown.SelectedIndex = LapTypeDropDown.FindString(manager.ReferenceLap.LapType);
+                    manager.SetReferenceLap(lap);
+                    CircuitLabel.Text = manager.ReferenceLap.Circuit.Name;
+                    LapTypeLabel.Text = manager.ReferenceLap.LapType;
+                    
                     clearReferenceLapToolStripMenuItem.Enabled = true;
                 }
-            }            
+            }
         }
 
         private void clearReferenceLapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            manager.ChangeCircuit(CircuitDropDown.SelectedItem.ToString(), LapTypeDropDown.SelectedItem.ToString());
+            manager.ClearReferenceLap();
             clearReferenceLapToolStripMenuItem.Enabled = false;
         }
 
@@ -406,22 +419,22 @@ namespace F1Speed
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
             var saveDialog = new SaveFileDialog
-                                 {
-                                     Filter = "F1PerfView|*.csv",
-                                     Title = "Export Fastest Lap to F1PerfView",
-                                     FileName =
-                                         manager.FastestLap.CircuitName + "_" +
-                                         manager.FastestLap.LapTime.ToString("0.000") + ".csv"
+            {
+                Filter = "F1PerfView|*.csv",
+                Title = "Export Fastest Lap to F1PerfView",
+                FileName =
+                    manager.FastestLap.CircuitName + "_" +
+                    manager.FastestLap.LapTime.ToString("0.000") + ".csv"
             };
             var result = saveDialog.ShowDialog();
 
             if (result == DialogResult.OK && !string.IsNullOrEmpty(saveDialog.FileName))
             {
-                var repository = new F1PerfViewTelemetryLapRepository();    
+                var repository = new F1PerfViewTelemetryLapRepository();
                 repository.Save(manager.FastestLap, saveDialog.FileName);
-            }            
+            }
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -430,9 +443,6 @@ namespace F1Speed
             optionsForm.ShowDialog(this);
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }                 
+      
     }
 }

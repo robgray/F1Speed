@@ -47,17 +47,17 @@
             // AllowExternalConnectionsCheckBox
             // 
             this.AllowExternalConnectionsCheckBox.AutoSize = true;
-            this.AllowExternalConnectionsCheckBox.Location = new System.Drawing.Point(12, 12);
+            this.AllowExternalConnectionsCheckBox.Location = new System.Drawing.Point(25, 40);
             this.AllowExternalConnectionsCheckBox.Name = "AllowExternalConnectionsCheckBox";
             this.AllowExternalConnectionsCheckBox.Size = new System.Drawing.Size(159, 17);
             this.AllowExternalConnectionsCheckBox.TabIndex = 1;
-            this.AllowExternalConnectionsCheckBox.Text = "F1 2011 runs on another PC";
+            this.AllowExternalConnectionsCheckBox.Text = "F1 2012 runs on another PC";
             this.AllowExternalConnectionsCheckBox.UseVisualStyleBackColor = true;
             // 
             // LogPacketDataCheckBox
             // 
             this.LogPacketDataCheckBox.AutoSize = true;
-            this.LogPacketDataCheckBox.Location = new System.Drawing.Point(12, 68);
+            this.LogPacketDataCheckBox.Location = new System.Drawing.Point(25, 63);
             this.LogPacketDataCheckBox.Name = "LogPacketDataCheckBox";
             this.LogPacketDataCheckBox.Size = new System.Drawing.Size(152, 17);
             this.LogPacketDataCheckBox.TabIndex = 2;

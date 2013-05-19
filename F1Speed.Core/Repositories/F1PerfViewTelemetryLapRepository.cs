@@ -12,42 +12,17 @@ namespace F1Speed.Core.Repositories
     /// </summary>
     public class F1PerfViewTelemetryLapRepository : ITelemetryLapRepository
     {
-        private IFileSystemFacade fileSystem;
+        private IFileSystemFacade fileSystem;        
         private static ILog logger = Logger.Create();
 
         public F1PerfViewTelemetryLapRepository() : this(new FileSystemFacade()) { }
         
         public F1PerfViewTelemetryLapRepository(IFileSystemFacade fileSystemFacade)
         {
-            fileSystem = fileSystemFacade;
+            fileSystem = fileSystemFacade;  
         }
-        
-        public static IDictionary<string, string> Tracks = new Dictionary<string, string>
-                                                               {
-                                                                   { "Australia", "1" },
-                                                                   { "Bahrain", "22" },
-                                                                   { "Malaysia", "2" },
-                                                                   { "Shanghai", "3" },
-                                                                   { "Barcelona", "4" },
-                                                                   { "Monaco", "5" },
-                                                                   { "Turkey", "6" },
-                                                                   { "Canada", "7" },
-                                                                   { "Valencia", "8" },
-                                                                   { "Britian", "9" },
-                                                                   { "Hockenheimring", "20" },
-                                                                   { "Nurburgring", "10" },
-                                                                   { "Hungoraring", "11" },
-                                                                   { "Belgium", "12" },
-                                                                   { "Italy", "13" },
-                                                                   { "Singapore", "14" },
-                                                                   { "Japan", "21" },
-                                                                   { "Korea", "15" },
-                                                                   { "Brazil", "16" },
-                                                                   { "Interlagos", "17" },
-                                                                   { "Abu Dahbi", "18" },
-                                                                   { "India", "19" },
-                                                                   { "United States (COTA)", "23" },
-                                                               };
+
+        public static IDictionary<string, string> Tracks = CircuitRepository.GetAll().ToDictionary(x => x.Name, x => x.Order.ToString());
 
         public void Save(TelemetryLap lap)
         {
@@ -156,7 +131,7 @@ namespace F1Speed.Core.Repositories
 
         #region ITelemetryLapRepository Members
 
-        public TelemetryLap Get(string circuitName, string lapType)
+        public TelemetryLap Get(Circuit circuit, string lapType)
         {
             throw new NotImplementedException();
         }

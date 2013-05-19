@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -13,7 +14,7 @@ namespace F1Speed.Core.Repositories
     {        
         public override void Save(TelemetryLap lap)
         {
-            Save(lap, GetFileName(lap.CircuitName, lap.LapType));
+            Save(lap, GetFileName(lap.Circuit, lap.LapType));
         }
 
         public void Save(TelemetryLap lap, string fileName)
@@ -41,9 +42,9 @@ namespace F1Speed.Core.Repositories
             }
         }
 
-        public override TelemetryLap Get(string circuitName, string lapType)
+        public override TelemetryLap Get(Circuit circuit, string lapType)
         {
-            return Get(GetFileName(circuitName, lapType));
+            return Get(GetFileName(circuit, lapType));
         }
 
         public TelemetryLap Get(string fileName)
@@ -58,8 +59,12 @@ namespace F1Speed.Core.Repositories
                     try
                     {
                         var binFormatter = new BinaryFormatter();
-                        var lap = (TelemetryLap) binFormatter.Deserialize(stream);                        
+                        var lap = (TelemetryLap) binFormatter.Deserialize(stream);
                         return lap;
+                    }
+                    catch (TargetInvocationException tex)
+                    {
+                        logger.Error("Could not retreive binary telemetry lap - new fields could not be retrieved", tex);                        
                     }
                     catch (SerializationException dex)
                     {

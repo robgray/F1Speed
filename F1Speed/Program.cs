@@ -23,9 +23,13 @@ namespace F1Speed
         {
             Application.ApplicationExit += Application_ApplicationExit;
 
-            var webPort = ConfigurationManager.AppSettings["webport"];
-            nancyHost = new NancyHost(new Uri("http://localhost:" + (string.IsNullOrEmpty(webPort) ? "43920" : webPort)));
-            nancyHost.Start();
+            if (bool.Parse(ConfigurationManager.AppSettings["useWebServer"]))
+            {
+                var webPort = ConfigurationManager.AppSettings["webport"];
+                nancyHost =
+                    new NancyHost(new Uri("http://localhost:" + (string.IsNullOrEmpty(webPort) ? "43920" : webPort)));
+                nancyHost.Start();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -34,7 +38,8 @@ namespace F1Speed
 
         static void Application_ApplicationExit(object sender, EventArgs e)
         {
-            nancyHost.Stop();
+            if (nancyHost != null)
+                nancyHost.Stop();
         }        
     }
 }

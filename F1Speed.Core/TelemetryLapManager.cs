@@ -13,18 +13,30 @@ namespace F1Speed.Core
         Reference
     };
 
+    public enum WheelspinWheel
+    {
+        FrontLeft,
+        FrontRight,
+        RearLeft,
+        RearRight       
+    };
+
     public delegate void CompletedFullLapEventHandler(object sender, CompletedFullLapEventArgs e);
     public delegate void LapEventHandler(object sender, LapEventArgs e);
     public delegate void PacketEventHandler(object sender, PacketEventArgs e);
-    
+
+    public delegate void CircuitChangedEventHandler(object sender, CircuitChangedEventArgs e);
+
     public class TelemetryLapManager
     {
+        private static object syncLock = new object();
+
         private readonly static ILog logger = Logger.Create();
 
-        private string _circuitName;
+        private Circuit _currectCircuit = Circuit.NullCircuit;
         private string _lapType;
-        
-        private readonly ITelemetryLapRepository _fastestLapRepository;
+
+        private readonly ITelemetryLapRepository _fastestLapRepository;        
         private readonly IEnumerable<ITelemetryLapRepository> _currentLapExporters;
         private readonly IList<TelemetryLap> _laps;
 
@@ -35,7 +47,8 @@ namespace F1Speed.Core
         public event LapEventHandler FinishedOutLap;
         public event LapEventHandler RemovedLap;
         public event PacketEventHandler PacketProcessed;
-        
+        public event CircuitChangedEventHandler CircuitChanged;
+
         public TelemetryLap ReferenceLap { get; private set; }
         public TelemetryLap FastestLap { get; set; }
 
@@ -52,13 +65,13 @@ namespace F1Speed.Core
         protected void OnRemovedLap(TelemetryLap lap)
         {
             if (RemovedLap != null)
-                RemovedLap(this, new LapEventArgs{ Lap = lap });
+                RemovedLap(this, new LapEventArgs { Lap = lap });
         }
 
         protected void OnStartedOutLap(TelemetryLap lap)
         {
             if (StartedOutLap != null)
-                StartedOutLap(this, new LapEventArgs { Lap = lap});
+                StartedOutLap(this, new LapEventArgs { Lap = lap });
         }
 
         protected void OnFinishedOutLap(TelemetryLap lap)
@@ -79,6 +92,12 @@ namespace F1Speed.Core
                 ReturnedToGarage(this, new LapEventArgs { Lap = lap });
         }
 
+        protected void OnCircuitChanged(string circuitName, string lapType)
+        {
+            if (CircuitChanged != null)
+                CircuitChanged(this, new CircuitChangedEventArgs { CircuitName = circuitName, LapType = lapType});
+        }
+
         protected void OnSetFastestLap(LapEventArgs e, TelemetryLap oldFastestLap)
         {
             logger.Info(string.Format("Set new Fastest Lap.  (old={0}.  new={1})",
@@ -90,10 +109,9 @@ namespace F1Speed.Core
         }
 
         public TelemetryLapManager()
-        {            
+        {
             _laps = new List<TelemetryLap>();
-            _fastestLapRepository = new BinaryTelemetryLapRepository();
-
+            _fastestLapRepository = new BinaryTelemetryLapRepository();             
             _currentLapExporters = new List<ITelemetryLapRepository>
                                       {
                                           new F1PerfViewTelemetryLapRepository()                                         
@@ -102,7 +120,7 @@ namespace F1Speed.Core
             _hasDataBeenReceived = false;
         }
 
-        public ComparisonModeEnum ComparisonMode { get; private set; } 
+        public ComparisonModeEnum ComparisonMode { get; private set; }
 
         public void SetReferenceLap(TelemetryLap referenceLap)
         {
@@ -115,6 +133,7 @@ namespace F1Speed.Core
             else
             {
                 logger.Info("Reference lap cleared");
+                ComparisonMode = ComparisonModeEnum.FastestLap;
             }
         }
 
@@ -127,14 +146,19 @@ namespace F1Speed.Core
             }
         }
 
+        public Circuit Circuit { get { return _currectCircuit; }}
+
         public TelemetryPacket LatestPacket
         {
             get
             {
-                if (CurrentLap == null || !CurrentLap.Packets.Any())
-                    return new TelemetryPacket();
+                lock (syncLock)
+                {
+                    if (CurrentLap == null || !CurrentLap.Packets.Any())
+                        return new TelemetryPacket();
 
-                return CurrentLap.Packets.Last();
+                    return CurrentLap.Packets.Last();
+                }
             }
         }
 
@@ -143,32 +167,46 @@ namespace F1Speed.Core
             get { return LatestPacket.Brake; }
         }
 
-        public float CurrentWheelSpin(int wheel)
+        public float CurrentWheelSpin(WheelspinWheel wheel)
         {
             switch (wheel)
             {
-                case 0:
+                case WheelspinWheel.FrontLeft:
                     return LatestPacket.WheelSpeedFrontLeft - LatestPacket.Speed;
-                case 1:
+                case WheelspinWheel.FrontRight:
                     return LatestPacket.WheelSpeedFrontRight - LatestPacket.Speed;
-                case 2:
+                case WheelspinWheel.RearLeft:
                     return LatestPacket.WheelSpeedBackLeft - LatestPacket.Speed;
-                case 3:
+                case WheelspinWheel.RearRight:
                     return LatestPacket.WheelSpeedBackRight - LatestPacket.Speed;
                 default:
                     return 0.0f;
             }
         }
 
-        public void ChangeCircuit(string circuitName, string lapType)
+        public string GetCurrentData(string fieldName)
         {
-            logger.Info("Current circuit changed to " + circuitName + " '" + lapType + "'");
+            if (!string.IsNullOrWhiteSpace(fieldName))
+            {
+                var type = typeof(TelemetryPacket);
+                var value = type.GetFields().First(x => x.Name == fieldName).GetValue(LatestPacket);
+
+                return value.ToString();
+            }
+            return string.Empty;
+        }
+
+        public void ChangeCircuit(Circuit newCircuit, string lapType)
+        {
+            logger.Info("Current circuit changed to " + newCircuit.Name + " '" + (lapType ?? "(none)") + "'");
 
             ReferenceLap = null;
             ComparisonMode = ComparisonModeEnum.FastestLap;
-            this._circuitName = circuitName;
-            this._lapType = lapType;
+            this._currectCircuit = newCircuit;            
+            this._lapType = lapType ?? "";
             LoadFastestLap();
+
+            OnCircuitChanged(this._currectCircuit.Name, this._lapType);
         }
 
         public bool HasDataBeenReceived
@@ -187,52 +225,73 @@ namespace F1Speed.Core
 
         public void ProcessIncomingPacket(TelemetryPacket packet)
         {
-            HasDataBeenReceived = true;
-            if (F1SpeedSettings.LogPacketData)
-                OnPacketProcessed(packet);                            
+            lock (syncLock)
+            {
+                HasDataBeenReceived = true;
+                if (F1SpeedSettings.LogPacketData)
+                    OnPacketProcessed(packet);
 
-            if (HasLapChanged(packet))
-            {                                
-                if (!packet.IsInPitLane) 
-                    CurrentLap.MarkLapCompleted();
-                else 
-                    OnReturnedToGarage(CurrentLap);
-                
-                if (CurrentLap.IsCompleteLap)
-                {                    
-                    if (string.IsNullOrEmpty(CurrentLap.CircuitName))
-                        CurrentLap.CircuitName = _circuitName;
-                    if (string.IsNullOrEmpty(CurrentLap.LapType))
-                        CurrentLap.LapType = _lapType;
+                CheckCircuit(packet);
 
-                    foreach (var exporter in _currentLapExporters) exporter.Save(CurrentLap);                         
-                    
-                    if (FastestLap == null || CurrentLap.LapTime < FastestLap.LapTime)
-                    {                                                
-                        OnSetFastestLap(new LapEventArgs { Lap = CurrentLap }, FastestLap);
-                        
-                        FastestLap = CurrentLap;
-                        SaveFastestLap();                       
+                if (HasLapChanged(packet))
+                {
+                    if (!packet.IsInPitLane)
+                        CurrentLap.MarkLapCompleted();
+                    else
+                        OnReturnedToGarage(CurrentLap);
+
+                    if (CurrentLap.IsCompleteLap)
+                    {
+                        if (string.IsNullOrEmpty(CurrentLap.CircuitName))
+
+                            if (string.IsNullOrEmpty(CurrentLap.LapType))
+                                CurrentLap.LapType = _lapType;
+
+                        foreach (var exporter in _currentLapExporters) exporter.Save(CurrentLap);
+
+                        if (FastestLap == null || CurrentLap.LapTime < FastestLap.LapTime)
+                        {
+                            OnSetFastestLap(new LapEventArgs {Lap = CurrentLap}, FastestLap);
+
+                            FastestLap = CurrentLap;
+                            SaveFastestLap();
+                        }
+
+                        OnCompletedFullLap(new CompletedFullLapEventArgs
+                            {
+                                CompletedLap = CurrentLap,
+                                CurrentLapNumber = (int) packet.Lap,
+                                PreviousLapNumber = CurrentLap.LapNumber
+                            });
+                    }
+                    else
+                    {
+                        if (CurrentLap.IsOutLap)
+                            OnFinishedOutLap(CurrentLap);
+
+                        // Lap is invalid
+                        _laps.Remove(CurrentLap);
+
+                        OnRemovedLap(CurrentLap);
                     }
 
-                    OnCompletedFullLap(new CompletedFullLapEventArgs { CompletedLap = CurrentLap, CurrentLapNumber = (int)packet.Lap, PreviousLapNumber = CurrentLap.LapNumber });
-                } 
-                else
-                {                    
-                    if (CurrentLap.IsOutLap)                    
-                        OnFinishedOutLap(CurrentLap);                    
-
-                    // Lap is invalid
-                    _laps.Remove(CurrentLap);
-
-                    OnRemovedLap(CurrentLap);
+                    // Start new current lap
+                    _laps.Add(new TelemetryLap(_currectCircuit, _lapType));
                 }
 
-                // Start new current lap
-                _laps.Add(new TelemetryLap(_circuitName, _lapType));                                         
-            }           
-            
-            CurrentLap.AddPacket(packet);
+                CurrentLap.AddPacket(packet);
+            }
+        }
+
+        public string LapType { get { return _lapType;  } }
+
+        private void CheckCircuit(TelemetryPacket packet)
+        {
+            var circuit = CircuitRepository.GetByTrackLength(packet.TrackLength);
+            if (circuit.Name != _currectCircuit.Name || _lapType != packet.SessionTypeName)
+            {
+                this.ChangeCircuit(circuit, packet.SessionTypeName);
+            }
         }
 
         protected bool HasLapChanged(TelemetryPacket packet)
@@ -243,7 +302,7 @@ namespace F1Speed.Core
                 return true;
             }
 
-            if (packet.Lap > CurrentLap.LapNumber || packet.Lap < CurrentLap.LapNumber || 
+            if (packet.Lap > CurrentLap.LapNumber || packet.Lap < CurrentLap.LapNumber ||
                 (Math.Abs(packet.Lap - CurrentLap.LapNumber) < Constants.Epsilon && CurrentLap.Distance < 0 && packet.Distance > 0))
             {
                 logger.Info("Lap has changed - current lap number changed");
@@ -258,7 +317,7 @@ namespace F1Speed.Core
             get
             {
                 if (_laps.Count == 0)
-                    _laps.Add(new TelemetryLap(_circuitName, _lapType));
+                    _laps.Add(new TelemetryLap(_currectCircuit, _lapType));
 
                 return _laps.Last();
             }
@@ -273,16 +332,16 @@ namespace F1Speed.Core
         {
             MigrateXmlLapsToBinary();
 
-            var fastestLap = _fastestLapRepository.Get(_circuitName, _lapType);            
+            var fastestLap = _fastestLapRepository.Get(_currectCircuit, _lapType);
             FastestLap = fastestLap;
         }
 
         private void MigrateXmlLapsToBinary()
         {
             var xmlRepo = new XmlTelemetryLapRepository();
-            var xmlFastestLap = xmlRepo.Get(_circuitName, _lapType);
+            var xmlFastestLap = xmlRepo.Get(Circuit, _lapType);
             if (xmlFastestLap == null) return;
-            xmlFastestLap.CircuitName = _circuitName;
+       
             xmlFastestLap.LapType = _lapType;
             _fastestLapRepository.Save(xmlFastestLap);
             xmlRepo.Delete(xmlFastestLap);
@@ -290,14 +349,17 @@ namespace F1Speed.Core
 
         public string GetSpeedDelta()
         {
-            if (ComparisonLap == null || CurrentLap == null || !CurrentLap.Packets.Any())
-                return "--";
+            lock (syncLock)
+            {
+                if (ComparisonLap == null || CurrentLap == null || !CurrentLap.Packets.Any())
+                    return "--";
 
-            var comparisonLapPacket = ComparisonLap.GetPacketClosestTo(LatestPacket);
+                var comparisonLapPacket = ComparisonLap.GetPacketClosestTo(LatestPacket);
 
-            var difference = LatestPacket.SpeedInKmPerHour - comparisonLapPacket.SpeedInKmPerHour;
-            return string.Format("{0}{1:0.0}",
-                                 difference > 0 ? "+" : "", difference);
+                var difference = LatestPacket.SpeedInKmPerHour - comparisonLapPacket.SpeedInKmPerHour;
+                return string.Format("{0}{1:0.0}",
+                                     difference > 0 ? "+" : "", difference);
+            }
         }
 
         public TelemetryLap ComparisonLap
@@ -310,16 +372,19 @@ namespace F1Speed.Core
 
         public float GetTimeDelta()
         {
-            if (ComparisonLap == null || CurrentLap == null || !CurrentLap.Packets.Any())
-                return 0f;
+            lock (syncLock)
+            {
+                if (ComparisonLap == null || CurrentLap == null || !CurrentLap.Packets.Any())
+                    return 0f;
 
-            var currentPacket = LatestPacket;
-            var comparisonLapPacket = ComparisonLap.GetPacketClosestTo(currentPacket);
+                var currentPacket = LatestPacket;
+                var comparisonLapPacket = ComparisonLap.GetPacketClosestTo(currentPacket);
 
-            var difference = currentPacket.LapTime - comparisonLapPacket.LapTime;
-            return -difference;
+                var difference = currentPacket.LapTime - comparisonLapPacket.LapTime;
+                return -difference;
+            }
         }
-    
+
         public string ComparisonLapTime
         {
             get
@@ -342,6 +407,11 @@ namespace F1Speed.Core
             {
                 return _laps.Any(lap => lap.HasLapFinished) ? _laps.Where(lap => lap.HasLapFinished).Average(lap => lap.LapTime).AsTimeString() : "";
             }
-        }        
+        }
+
+        public void ClearReferenceLap()
+        {
+            SetReferenceLap(null);
+        }
     }
 }

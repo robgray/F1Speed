@@ -42,11 +42,11 @@ namespace F1Speed.Core.Repositories
             }
         }
 
-        public override TelemetryLap Get(string circuitName, string lapType)
+        public override TelemetryLap Get(Circuit circuit, string lapType)
         {
             try
             {
-                var filename = GetFileName(circuitName, lapType);
+                var filename = GetFileName(circuit, lapType);
                 if (!File.Exists(filename))
                     return null;
 

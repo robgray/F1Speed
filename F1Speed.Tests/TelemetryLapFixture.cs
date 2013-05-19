@@ -13,7 +13,7 @@ namespace F1Speed.Tests
         [Test]
         public void AddPacket_adds_packets()
         {
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "LapType");
             var origCount = tLap.Packets.Count();
 
             tLap.AddPacket(new TelemetryPacket());
@@ -30,7 +30,7 @@ namespace F1Speed.Tests
             // Samples are taken 60 times per second, so first sample must be < 0.018 into the lap.
             // time differs slightly because last sample of last lap might have been nearly 0.017 before end of that lap.
             var tPacket = new TelemetryPacket() {LapTime = cutoff * 0.95f };
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "LapType");
             tLap.AddPacket(tPacket);
 
             Assert.IsTrue(tLap.IsFirstPacketStartLine);
@@ -44,7 +44,7 @@ namespace F1Speed.Tests
             // Samples are taken every 0.017 seconds, so first sample must be < 0.018 into the lap.
             // time differs slightly because last sample of last lap might have been nearly 0.017 before end of that lap.
             var tPacket = new TelemetryPacket() { LapTime = cutoff * 1.1f };
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "LapType");
             tLap.AddPacket(tPacket);
 
             Assert.IsFalse(tLap.IsFirstPacketStartLine);
@@ -53,7 +53,7 @@ namespace F1Speed.Tests
         [Test]
         public void GetPacketClosestTo_returns_packet_closest_to_supplied_packet()
         {
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "LapType");
             tLap.AddPacket(new TelemetryPacket{ LapDistance = 0.529f});
             tLap.AddPacket(new TelemetryPacket { LapDistance = 1.875f });
             tLap.AddPacket(new TelemetryPacket { LapDistance = 3.221f });

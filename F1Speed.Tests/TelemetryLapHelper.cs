@@ -13,7 +13,7 @@ namespace F1Speed.Tests
 
         public static TelemetryLap CreatePopulatedLap(float lapNumber, bool completeLap)
         {
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "Test");
             const float SampleRate = (1000/60000f);
             
             for (var index = 0; index < lapDistances.Length; index++)
@@ -32,7 +32,7 @@ namespace F1Speed.Tests
 
         public static TelemetryLap CreateOutLap()
         {
-            var tLap = new TelemetryLap("CircuitName", "LapType");
+            var tLap = new TelemetryLap(Circuit.NullCircuit, "Test");
             const float SampleRate = (1000 / 60000f);
 
             for (var index = 0; index < lapDistances.Length; index++)
