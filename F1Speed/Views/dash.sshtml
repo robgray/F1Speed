@@ -20,31 +20,28 @@
 				<span class="circuitDetails" data-bind="text: lapType" />
 			</div>
 		</header>
-		<div class="row-fluid">
-		  <div class="span4">
-			<h4>Speed Delta</h4>
-			<div class="numeric-delta" data-bind="text: speedDelta, css: speedClass"></div>
-		  </div>
-		  <div class="span4">
-			<h4>Time Delta</h4>
-			<div class="numeric-delta" data-bind="text: timeDelta, css: timeClass"></div>
-		  </div>
-		  <div class="span2">
-			<h4>Wheelspin</h4>			
-			<div class="wheelspincontainer">
-				<div class="wheelspin left" data-bind="wheelspin: wheelspinFrontLeft"></div>
-				<div class="wheelspin right" data-bind="wheelspin: wheelspinFrontRight"></div>				
+		
+		<div id="components" class="row-fluid">
+			<div id="speed-delta" class="span6">
+				<h4>Speed Delta</h4>
+				<div class="numeric-delta" data-bind="text: speedDisplay, css: speedClass"></div>
 			</div>
-			<div class="wheelspincontainer">
-				<div class="wheelspin left" data-bind="wheelspin: wheelspinRearLeft"></div>
-				<div class="wheelspin right" data-bind="wheelspin: wheelspinRearRight"></div>								
+			<div id="time-delta" class="span4 numeric-delta-container">
+				<h4>Time Delta</h4>
+				<div class="numeric-delta" data-bind="text: timeDisplay, css: timeClass"></div>
 			</div>
-		  </div>
-		  <div class="span2>
-		  </div>
-		</div>
-		<div class="row-fluid">
-			<div class="span2">
+			<div id="wheelspincontainer-parent" class="span2">
+				<h4>Wheelspin</h4>			
+				<div class="wheelspincontainer">
+					<div class="wheelspin left" data-bind="wheelspin: wheelspinFrontLeft"></div>
+					<div class="wheelspin right" data-bind="wheelspin: wheelspinFrontRight"></div>				
+				</div>
+				<div class="wheelspincontainer">
+					<div class="wheelspin left" data-bind="wheelspin: wheelspinRearLeft"></div>
+					<div class="wheelspin right" data-bind="wheelspin: wheelspinRearRight"></div>								
+				</div>
+			</div>
+			<div id="pedalcontainer-parent" class="span2">
 				<div class="pedalcontainer">
 					<h4>Brake</h4>
 					<div class="pedal brake" data-bind="pedal: brake"></div>
@@ -54,8 +51,12 @@
 					<div class="pedal throttle" data-bind="pedal: throttle"></div>
 				</div>
 			</div>
-			<div class="span10">
-				
+		</div>						
+		<div class="row-fluid">
+			<div class="span12">			
+				<h4>Time Delta</h4>
+				<div data-bind="timeDelta: timeDelta, css: timebarCss"></div>
+				<label data-bind="text: timeDisplay, css: timeClass" class="time-delta"></label>
 			</div>
 		</div>
 	</div>
@@ -66,7 +67,7 @@
     <script type="text/javascript" src="/content/scripts/dash-vm.js"></script>
     <script>
       $(document).ready(function() {
-          ko.applyBindings(DashViewModel)
+          ko.applyBindings(new DashViewModel)
       });
     </script>
   </body>

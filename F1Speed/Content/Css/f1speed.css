@@ -36,7 +36,7 @@ h4 {
 
 .wheelspincontainer {
     position: relative;
-    height: 120px;
+    height: 60px;
     width: 70px;
 }
 .wheelspin {
@@ -67,3 +67,48 @@ h4 {
 
 .pedal.brake { background-color: red }
 .pedal.throttle { background-color: green }
+
+.timebar {
+    height: 40px;    
+}
+
+.time-delta {
+    width:100%; 
+    text-align: center; 
+    margin-top:10px;
+    font-size: 22px;
+}
+
+.timebar.positive { background-color: green; }
+
+.timebar.negative { background-color: red; }
+
+#time-delta { display: none; }
+
+@media (max-width: 480px) {
+    #components { position: relative; }
+    body { padding: 0 5px; }
+    .circuitDetails, h4 { font-size: 12px;line-height: 15px;}
+    .numeric-delta {
+        font-size: 40px;
+        line-height: 45px;    
+    }
+    .row-fluid [class*="span"] { min-height: 10px; }
+    .row-fluid [class*="span2"] { float: left; width: 125px;  }
+    header { padding: 5px 0; }
+    h4 { margin: 5px 0; }
+    #speed-delta, #time-delta { width: 130px; } 
+    #time-delta { display: block; }   
+    #wheelspincontainer-parent { position: absolute;top: 0;right: 110px;}
+    #pedalcontainer-parent { position: absolute;top: 0;right: 0px;}
+}
+
+@media (max-width: 800px) {
+    .wheelspincontainer { width: 60px; }
+    .wheelspin { width: 25px; }
+    .pedalcontainer { width: 40px; }
+    .pedal { width: 30px; }
+}
+
+
+

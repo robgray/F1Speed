@@ -30,3 +30,4 @@ D:\source\github\f1speed\F1Speed\obj\x86\Release\F1Speed.csproj.GenerateResource
 D:\source\github\f1speed\F1Speed\obj\x86\Release\F1Speed.TrustInfo.xml
 D:\source\github\f1speed\F1Speed\obj\x86\Release\F1Speed.exe.manifest
 D:\source\github\f1speed\F1Speed\obj\x86\Release\F1Speed.application
+D:\source\github\f1speed\F1Speed\bin\Release\F1Speed.exe.config
