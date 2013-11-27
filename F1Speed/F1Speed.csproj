@@ -107,6 +107,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DashViewModel.cs" />
+    <Compile Include="Models\SectorTimeViewModel.cs" />
     <Compile Include="Modules\ApiModule.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>

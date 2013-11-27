@@ -22,5 +22,13 @@ namespace F1Speed.Models
 
         public float Throttle { get; set; }
         public float Brake { get; set; }
+
+        public string FastestLap { get; set; }
+        public string LastLap { get; set; }
+        public string CurrentLap { get; set; }
+
+        public SectorTimeViewModel Sector1 { get; set; }
+        public SectorTimeViewModel Sector2 { get; set; }
+        public SectorTimeViewModel Sector3 { get; set; }
     }
 }

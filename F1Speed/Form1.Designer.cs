@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.AverageLapLabel = new System.Windows.Forms.Label();
+            this.LastLapLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CurrentLapLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.SlowerBarLabel = new System.Windows.Forms.Label();
             this.FasterBarLabel = new System.Windows.Forms.Label();
             this.ControlsGroup = new System.Windows.Forms.GroupBox();
+            this.LapTypeLabel = new System.Windows.Forms.Label();
+            this.CircuitLabel = new System.Windows.Forms.Label();
             this.TransmissionLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,8 +78,22 @@
             this.cboField = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.FieldValueLabel = new System.Windows.Forms.Label();
-            this.CircuitLabel = new System.Windows.Forms.Label();
-            this.LapTypeLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Sector1CurrentSplit = new System.Windows.Forms.Label();
+            this.Sector1FastestSplit = new System.Windows.Forms.Label();
+            this.Sector2FastestSplit = new System.Windows.Forms.Label();
+            this.Sector2CurrentSplit = new System.Windows.Forms.Label();
+            this.Sector2Label = new System.Windows.Forms.Label();
+            this.Sector3FastestSplit = new System.Windows.Forms.Label();
+            this.Sector3CurrentSplit = new System.Windows.Forms.Label();
+            this.Sector3Label = new System.Windows.Forms.Label();
+            this.Sector1DeltaSplit = new System.Windows.Forms.Label();
+            this.Sector2DeltaSplit = new System.Windows.Forms.Label();
+            this.Sector3DeltaSplit = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Sector1Label = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.BarGroup.SuspendLayout();
@@ -127,7 +143,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.AverageLapLabel);
+            this.groupBox2.Controls.Add(this.LastLapLabel);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.CurrentLapLabel);
             this.groupBox2.Controls.Add(this.label5);
@@ -139,16 +155,16 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
-            // AverageLapLabel
+            // LastLapLabel
             // 
-            this.AverageLapLabel.AutoSize = true;
-            this.AverageLapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AverageLapLabel.ForeColor = System.Drawing.Color.White;
-            this.AverageLapLabel.Location = new System.Drawing.Point(171, 71);
-            this.AverageLapLabel.Name = "AverageLapLabel";
-            this.AverageLapLabel.Size = new System.Drawing.Size(214, 51);
-            this.AverageLapLabel.TabIndex = 9;
-            this.AverageLapLabel.Text = "1:55.5555";
+            this.LastLapLabel.AutoSize = true;
+            this.LastLapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastLapLabel.ForeColor = System.Drawing.Color.White;
+            this.LastLapLabel.Location = new System.Drawing.Point(171, 71);
+            this.LastLapLabel.Name = "LastLapLabel";
+            this.LastLapLabel.Size = new System.Drawing.Size(214, 51);
+            this.LastLapLabel.TabIndex = 9;
+            this.LastLapLabel.Text = "1:55.5555";
             // 
             // label7
             // 
@@ -157,9 +173,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(6, 82);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 26);
+            this.label7.Size = new System.Drawing.Size(95, 26);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Average Lap";
+            this.label7.Text = "Last Lap";
             // 
             // CurrentLapLabel
             // 
@@ -262,6 +278,26 @@
             this.ControlsGroup.TabIndex = 8;
             this.ControlsGroup.TabStop = false;
             // 
+            // LapTypeLabel
+            // 
+            this.LapTypeLabel.AutoSize = true;
+            this.LapTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LapTypeLabel.ForeColor = System.Drawing.Color.White;
+            this.LapTypeLabel.Location = new System.Drawing.Point(473, 16);
+            this.LapTypeLabel.Name = "LapTypeLabel";
+            this.LapTypeLabel.Size = new System.Drawing.Size(0, 37);
+            this.LapTypeLabel.TabIndex = 11;
+            // 
+            // CircuitLabel
+            // 
+            this.CircuitLabel.AutoSize = true;
+            this.CircuitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CircuitLabel.ForeColor = System.Drawing.Color.White;
+            this.CircuitLabel.Location = new System.Drawing.Point(92, 16);
+            this.CircuitLabel.Name = "CircuitLabel";
+            this.CircuitLabel.Size = new System.Drawing.Size(0, 37);
+            this.CircuitLabel.TabIndex = 10;
+            // 
             // TransmissionLabel
             // 
             this.TransmissionLabel.BackColor = System.Drawing.Color.Green;
@@ -313,9 +349,9 @@
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.BrakeBar);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(13, 309);
+            this.groupBox5.Location = new System.Drawing.Point(13, 308);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(164, 123);
+            this.groupBox5.Size = new System.Drawing.Size(164, 124);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
@@ -324,9 +360,9 @@
             this.ThrottleBar.BackColor = System.Drawing.Color.Green;
             this.ThrottleBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThrottleBar.ForeColor = System.Drawing.Color.White;
-            this.ThrottleBar.Location = new System.Drawing.Point(88, 20);
+            this.ThrottleBar.Location = new System.Drawing.Point(88, 24);
             this.ThrottleBar.Name = "ThrottleBar";
-            this.ThrottleBar.Size = new System.Drawing.Size(51, 74);
+            this.ThrottleBar.Size = new System.Drawing.Size(51, 70);
             this.ThrottleBar.TabIndex = 4;
             // 
             // label9
@@ -345,9 +381,9 @@
             this.BrakeBar.BackColor = System.Drawing.Color.Red;
             this.BrakeBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrakeBar.ForeColor = System.Drawing.Color.White;
-            this.BrakeBar.Location = new System.Drawing.Point(21, 20);
+            this.BrakeBar.Location = new System.Drawing.Point(21, 24);
             this.BrakeBar.Name = "BrakeBar";
-            this.BrakeBar.Size = new System.Drawing.Size(51, 74);
+            this.BrakeBar.Size = new System.Drawing.Size(51, 70);
             this.BrakeBar.TabIndex = 2;
             // 
             // label6
@@ -460,9 +496,9 @@
             this.LogBox.ForeColor = System.Drawing.Color.DarkGray;
             this.LogBox.FormattingEnabled = true;
             this.LogBox.ItemHeight = 20;
-            this.LogBox.Location = new System.Drawing.Point(13, 452);
+            this.LogBox.Location = new System.Drawing.Point(472, 452);
             this.LogBox.Name = "LogBox";
-            this.LogBox.Size = new System.Drawing.Size(909, 384);
+            this.LogBox.Size = new System.Drawing.Size(450, 144);
             this.LogBox.TabIndex = 11;
             // 
             // BackRightWheelSpin
@@ -521,9 +557,9 @@
             this.cboField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboField.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(108, 848);
+            this.cboField.Location = new System.Drawing.Point(553, 614);
             this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(289, 37);
+            this.cboField.Size = new System.Drawing.Size(369, 37);
             this.cboField.TabIndex = 18;
             // 
             // label8
@@ -531,7 +567,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(28, 854);
+            this.label8.Location = new System.Drawing.Point(473, 620);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 26);
             this.label8.TabIndex = 17;
@@ -542,37 +578,213 @@
             this.FieldValueLabel.AutoSize = true;
             this.FieldValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FieldValueLabel.ForeColor = System.Drawing.Color.White;
-            this.FieldValueLabel.Location = new System.Drawing.Point(417, 840);
+            this.FieldValueLabel.Location = new System.Drawing.Point(555, 664);
             this.FieldValueLabel.Name = "FieldValueLabel";
             this.FieldValueLabel.Size = new System.Drawing.Size(0, 51);
             this.FieldValueLabel.TabIndex = 19;
             // 
-            // CircuitLabel
+            // label11
             // 
-            this.CircuitLabel.AutoSize = true;
-            this.CircuitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CircuitLabel.ForeColor = System.Drawing.Color.White;
-            this.CircuitLabel.Location = new System.Drawing.Point(92, 16);
-            this.CircuitLabel.Name = "CircuitLabel";
-            this.CircuitLabel.Size = new System.Drawing.Size(0, 37);
-            this.CircuitLabel.TabIndex = 10;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Black;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(110, 467);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 24);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Current";
             // 
-            // LapTypeLabel
+            // label12
             // 
-            this.LapTypeLabel.AutoSize = true;
-            this.LapTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LapTypeLabel.ForeColor = System.Drawing.Color.White;
-            this.LapTypeLabel.Location = new System.Drawing.Point(473, 16);
-            this.LapTypeLabel.Name = "LapTypeLabel";
-            this.LapTypeLabel.Size = new System.Drawing.Size(0, 37);
-            this.LapTypeLabel.TabIndex = 11;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Black;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(325, 467);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 24);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Fastest";
+            // 
+            // Sector1CurrentSplit
+            // 
+            this.Sector1CurrentSplit.AutoSize = true;
+            this.Sector1CurrentSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector1CurrentSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector1CurrentSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector1CurrentSplit.Location = new System.Drawing.Point(110, 498);
+            this.Sector1CurrentSplit.Name = "Sector1CurrentSplit";
+            this.Sector1CurrentSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector1CurrentSplit.TabIndex = 23;
+            // 
+            // Sector1FastestSplit
+            // 
+            this.Sector1FastestSplit.AutoSize = true;
+            this.Sector1FastestSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector1FastestSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector1FastestSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector1FastestSplit.Location = new System.Drawing.Point(325, 498);
+            this.Sector1FastestSplit.Name = "Sector1FastestSplit";
+            this.Sector1FastestSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector1FastestSplit.TabIndex = 24;
+            // 
+            // Sector2FastestSplit
+            // 
+            this.Sector2FastestSplit.AutoSize = true;
+            this.Sector2FastestSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector2FastestSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector2FastestSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector2FastestSplit.Location = new System.Drawing.Point(324, 526);
+            this.Sector2FastestSplit.Name = "Sector2FastestSplit";
+            this.Sector2FastestSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector2FastestSplit.TabIndex = 27;
+            // 
+            // Sector2CurrentSplit
+            // 
+            this.Sector2CurrentSplit.AutoSize = true;
+            this.Sector2CurrentSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector2CurrentSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector2CurrentSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector2CurrentSplit.Location = new System.Drawing.Point(109, 526);
+            this.Sector2CurrentSplit.Name = "Sector2CurrentSplit";
+            this.Sector2CurrentSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector2CurrentSplit.TabIndex = 26;
+            // 
+            // Sector2Label
+            // 
+            this.Sector2Label.AutoSize = true;
+            this.Sector2Label.BackColor = System.Drawing.Color.Black;
+            this.Sector2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector2Label.ForeColor = System.Drawing.Color.White;
+            this.Sector2Label.Location = new System.Drawing.Point(8, 526);
+            this.Sector2Label.Name = "Sector2Label";
+            this.Sector2Label.Size = new System.Drawing.Size(79, 24);
+            this.Sector2Label.TabIndex = 25;
+            this.Sector2Label.Text = "Sector 2";
+            // 
+            // Sector3FastestSplit
+            // 
+            this.Sector3FastestSplit.AutoSize = true;
+            this.Sector3FastestSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector3FastestSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector3FastestSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector3FastestSplit.Location = new System.Drawing.Point(324, 554);
+            this.Sector3FastestSplit.Name = "Sector3FastestSplit";
+            this.Sector3FastestSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector3FastestSplit.TabIndex = 30;
+            // 
+            // Sector3CurrentSplit
+            // 
+            this.Sector3CurrentSplit.AutoSize = true;
+            this.Sector3CurrentSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector3CurrentSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector3CurrentSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector3CurrentSplit.Location = new System.Drawing.Point(109, 554);
+            this.Sector3CurrentSplit.Name = "Sector3CurrentSplit";
+            this.Sector3CurrentSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector3CurrentSplit.TabIndex = 29;
+            // 
+            // Sector3Label
+            // 
+            this.Sector3Label.AutoSize = true;
+            this.Sector3Label.BackColor = System.Drawing.Color.Black;
+            this.Sector3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector3Label.ForeColor = System.Drawing.Color.White;
+            this.Sector3Label.Location = new System.Drawing.Point(8, 554);
+            this.Sector3Label.Name = "Sector3Label";
+            this.Sector3Label.Size = new System.Drawing.Size(79, 24);
+            this.Sector3Label.TabIndex = 28;
+            this.Sector3Label.Text = "Sector 3";
+            // 
+            // Sector1DeltaSplit
+            // 
+            this.Sector1DeltaSplit.AutoSize = true;
+            this.Sector1DeltaSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector1DeltaSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector1DeltaSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector1DeltaSplit.Location = new System.Drawing.Point(205, 498);
+            this.Sector1DeltaSplit.Name = "Sector1DeltaSplit";
+            this.Sector1DeltaSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector1DeltaSplit.TabIndex = 31;
+            // 
+            // Sector2DeltaSplit
+            // 
+            this.Sector2DeltaSplit.AutoSize = true;
+            this.Sector2DeltaSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector2DeltaSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector2DeltaSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector2DeltaSplit.Location = new System.Drawing.Point(205, 526);
+            this.Sector2DeltaSplit.Name = "Sector2DeltaSplit";
+            this.Sector2DeltaSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector2DeltaSplit.TabIndex = 32;
+            // 
+            // Sector3DeltaSplit
+            // 
+            this.Sector3DeltaSplit.AutoSize = true;
+            this.Sector3DeltaSplit.BackColor = System.Drawing.Color.Black;
+            this.Sector3DeltaSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector3DeltaSplit.ForeColor = System.Drawing.Color.White;
+            this.Sector3DeltaSplit.Location = new System.Drawing.Point(205, 554);
+            this.Sector3DeltaSplit.Name = "Sector3DeltaSplit";
+            this.Sector3DeltaSplit.Size = new System.Drawing.Size(0, 24);
+            this.Sector3DeltaSplit.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(38, 480);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Sector 1";
+            // 
+            // Sector1Label
+            // 
+            this.Sector1Label.AutoSize = true;
+            this.Sector1Label.BackColor = System.Drawing.Color.Black;
+            this.Sector1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sector1Label.ForeColor = System.Drawing.Color.White;
+            this.Sector1Label.Location = new System.Drawing.Point(9, 498);
+            this.Sector1Label.Name = "Sector1Label";
+            this.Sector1Label.Size = new System.Drawing.Size(79, 24);
+            this.Sector1Label.TabIndex = 37;
+            this.Sector1Label.Text = "Sector 1";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Black;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(211, 467);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 24);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Delta";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(935, 897);
+            this.ClientSize = new System.Drawing.Size(935, 681);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.Sector1Label);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Sector3DeltaSplit);
+            this.Controls.Add(this.Sector2DeltaSplit);
+            this.Controls.Add(this.Sector1DeltaSplit);
+            this.Controls.Add(this.Sector3FastestSplit);
+            this.Controls.Add(this.Sector3CurrentSplit);
+            this.Controls.Add(this.Sector3Label);
+            this.Controls.Add(this.Sector2FastestSplit);
+            this.Controls.Add(this.Sector2CurrentSplit);
+            this.Controls.Add(this.Sector2Label);
+            this.Controls.Add(this.Sector1FastestSplit);
+            this.Controls.Add(this.Sector1CurrentSplit);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.FieldValueLabel);
             this.Controls.Add(this.cboField);
             this.Controls.Add(this.label8);
@@ -640,7 +852,7 @@
         private System.Windows.Forms.ToolStripMenuItem importCompareLapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportFastestLapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearReferenceLapToolStripMenuItem;
-        private System.Windows.Forms.Label AverageLapLabel;
+        private System.Windows.Forms.Label LastLapLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exportFastestLapToF1PerfViewToolStripMenuItem;
@@ -659,5 +871,21 @@
         private System.Windows.Forms.Label FieldValueLabel;
         private System.Windows.Forms.Label LapTypeLabel;
         private System.Windows.Forms.Label CircuitLabel;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label Sector1CurrentSplit;
+        private System.Windows.Forms.Label Sector1FastestSplit;
+        private System.Windows.Forms.Label Sector2FastestSplit;
+        private System.Windows.Forms.Label Sector2CurrentSplit;
+        private System.Windows.Forms.Label Sector2Label;
+        private System.Windows.Forms.Label Sector3FastestSplit;
+        private System.Windows.Forms.Label Sector3CurrentSplit;
+        private System.Windows.Forms.Label Sector3Label;
+        private System.Windows.Forms.Label Sector1DeltaSplit;
+        private System.Windows.Forms.Label Sector2DeltaSplit;
+        private System.Windows.Forms.Label Sector3DeltaSplit;
+        private System.Windows.Forms.Label Sector1Label;
+        private System.Windows.Forms.Label label13;        
     }
 }

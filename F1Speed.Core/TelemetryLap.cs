@@ -9,8 +9,10 @@ using F1Speed.Core.Repositories;
 namespace F1Speed.Core
 {
     [Serializable]
-    public class TelemetryLap : ISerializable
+    public class TelemetryLap : ISerializable, ISectorTiming
     {
+        private static object syncLock = new object();
+
         public TelemetryLap()
         {
             
@@ -23,7 +25,7 @@ namespace F1Speed.Core
             LapType = lapType;
         }
 
-        public Circuit Circuit { get; private set; }
+        public Circuit Circuit { get; set; }
 
         public TelemetryLap(SerializationInfo info, StreamingContext context)
         {
@@ -65,19 +67,25 @@ namespace F1Speed.Core
         
         public void AddPacket(TelemetryPacket packet)
         {
-            Packets.Add(packet);
-            //while (_packets.Any() && _packets.First().Distance < 0)
-            //    _packets.Remove(_packets.First());
+            lock (syncLock)
+            {
+                Packets.Add(packet);
+                //while (_packets.Any() && _packets.First().Distance < 0)
+                //    _packets.Remove(_packets.First());
+            }
         }
 
         public int LapNumber
         {
             get
             {
-                if (!Packets.Any())
-                    return 0;
+                lock (syncLock)
+                {
+                    if (!Packets.Any())
+                        return 0;
 
-                return (int)Packets.Last().Lap;
+                    return (int) Packets.Last().Lap;
+                }
             }
         }
 
@@ -85,7 +93,63 @@ namespace F1Speed.Core
         {
             get
             {
-                return !Packets.Any() ? 0f : Packets.Last().LapTime;
+                lock (syncLock)
+                {
+                    return !Packets.Any() ? 0f : Packets.Last().LapTime;
+                }
+            }
+        }
+
+        public float Sector1Time
+        {
+            get
+            {
+                lock (syncLock)
+                {
+                    if (!Packets.Any())
+                    {
+                        return 0f;
+                    }
+                    if (Math.Abs(Packets.Last().TimeSector1 - 0) < 0.0001)
+                    {
+                        return Packets.Last().LapTime;
+                    }
+                    return Packets.Last().TimeSector1;
+                }
+            }
+        }
+
+        public float Sector2Time
+        {
+            get
+            {
+                lock (syncLock)
+                {
+                    if (!Packets.Any() || Math.Abs(Packets.Last().TimeSector1 - 0) < 0.0001)
+                    {
+                        return 0f;
+                    }
+                    if (Math.Abs(Packets.Last().TimeSector2 - 0) < 0.0001)
+                    {
+                        return Packets.Last().LapTime - Sector1Time;
+                    }
+                    return Packets.Last().TimeSector2;
+                }
+            }
+        }
+
+        public float Sector3Time
+        {
+            get
+            {
+                lock (syncLock)
+                {
+                    if (!Packets.Any() || Math.Abs(Packets.Last().TimeSector2 - 0) < 0.0001)
+                    {
+                        return 0f;
+                    }
+                    return Packets.Last().LapTime - Packets.Last().TimeSector2 - Packets.Last().TimeSector1;
+                }
             }
         }
 
@@ -95,10 +159,26 @@ namespace F1Speed.Core
             {
                 const float cutoff = (1000 / 60000f) + 0.001f;
 
-                if (!Packets.Any())
-                    return false;
-                var first = Packets.First();
-                return first.LapTime > 0f && first.LapTime < cutoff;                
+                lock (syncLock)
+                {
+                    if (!Packets.Any())
+                        return false;
+                    var first = Packets.First();
+                    return first.LapTime > 0f && first.LapTime < cutoff;
+                }
+            }
+        }
+
+        public int CurrentSector
+        {
+            get
+            {
+                lock (syncLock)
+                {
+                    if (Packets.Count == 0)
+                        return 0;
+                    return ((int) Packets.Last().Sector) + 1;
+                }
             }
         }
 
@@ -110,12 +190,15 @@ namespace F1Speed.Core
         
         public TelemetryPacket GetPacketClosestTo(TelemetryPacket packet)
         {
-            if (!Packets.Any())
-                return packet;
+            lock (syncLock)
+            {
+                if (!Packets.Any())
+                    return packet;
 
-            var closestPackets = Packets.OrderBy(p => Math.Abs(p.LapDistance - packet.LapDistance)).Take(10);
+                var closestPackets = Packets.OrderBy(p => Math.Abs(p.LapDistance - packet.LapDistance)).Take(10);
 
-            return closestPackets.First();
+                return closestPackets.First();
+            }
         }
         
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -148,9 +231,12 @@ namespace F1Speed.Core
         { 
             get
             {
-                if (!Packets.Any())
-                    return 0f;
-                return Packets.Last().Distance;
+                lock (syncLock)
+                {
+                    if (!Packets.Any())
+                        return 0f;
+                    return Packets.Last().Distance;
+                }
             }
         }
     }

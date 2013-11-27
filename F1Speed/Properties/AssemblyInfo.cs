@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("F1Speed")]
-[assembly: AssemblyDescription("Visit www.f1speedguides.com")]
+[assembly: AssemblyDescription("Visit www.raggedracing.com")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("www.robertgray.net.au")]
+[assembly: AssemblyCompany("www.raggedracing.net.au")]
 [assembly: AssemblyProduct("F1Speed")]
-[assembly: AssemblyCopyright("Copyright © 2012 Rob Gray")]
+[assembly: AssemblyCopyright("Copyright © 2013 Rob Gray")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.6.0.0")]
-[assembly: AssemblyFileVersion("0.6.0.0")]
+[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyFileVersion("1.0.*")]

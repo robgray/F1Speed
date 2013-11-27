@@ -4,7 +4,7 @@
   <description asmv2:iconFile="f1s_32.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="F1Speed" version="0.6.0.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="F1Speed" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="F1Speed.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="F1Speed.exe" size="278016">
-      <assemblyIdentity name="F1Speed" version="0.6.0.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="F1Speed.exe" size="289792">
+      <assemblyIdentity name="F1Speed" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uQ5WoC8VgeKOZCbav218l0qQUCU=</dsig:DigestValue>
+        <dsig:DigestValue>x0WBzE95UU27hVHABcJdt9Yh6Vc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="F1Speed.Core.dll" size="38912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="F1Speed.Core.dll" size="48128">
       <assemblyIdentity name="F1Speed.Core" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>990D/SLkdlFryUsaTRbVemxCVJg=</dsig:DigestValue>
+        <dsig:DigestValue>vpJ8ycj8R0+uZqK2DJpi/0RDWFM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,6 +78,183 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Nancy.dll" size="764928">
+      <assemblyIdentity name="Nancy" version="0.13.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>OoJ0VyB1GJkLdKCqLmvBlKBfm0E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Nancy.Hosting.Self.dll" size="14336">
+      <assemblyIdentity name="Nancy.Hosting.Self" version="0.13.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>5IHUCAojExEmHJ2iCc7r7iFxOrA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Content\Css\bootstrap.css" size="127556">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>b+D2iCnARGiM06+pxscpqg/nXYM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\bootstrap.min.css" size="101274">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>T8/2rxX4J7N3DgQUhQJnmTEbwrU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\bootstrap-responsive.css" size="22797">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>LdVPQHgopkhpna9Y+OMYI/sifwU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\bootstrap-responsive.min.css" size="16529">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>r7la6IXnZ2Wx7og19nbFivXiYvA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\f1speed.css" size="2253">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TexNY3mmyLLHdUh2jJe9RhNB3xE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\images\glyphicons-halflings.png" size="12799">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hPYTYxsH1P4irLq1DlUcD+BL14s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Css\images\glyphicons-halflings-white.png" size="8777">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>olxHBTIP1jwzeQ5maHKRDnArm/Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\bootstrap.js" size="58502">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GLMtDW8a9NlPh0pec1WfHA/nISI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\bootstrap.min.js" size="25748">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UTQg7NX9iTzeqmmPYgEJ+9QztoY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\dash-vm.js" size="5259">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3bo36YHCpnSYeaoLOIOgN0Sg6QM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\jquery-1.8.3.intellisense.js" size="151712">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>w+g3bDRJ+8i11vbcurCszJA7iyc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\jquery-1.8.3.js" size="267739">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SabRNG89WhZzMail3k80tfzB9tA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\jquery-1.8.3.min.js" size="93637">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>i2ur/0e4qXk/NwNv0bGjrUHThCM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\knockout.bindings.js" size="1966">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zsDCqGxtoBknc6i34foKtywaWM8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\knockout-2.2.0.debug.js" size="181424">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WqFGFm3GGadnz05fB0YPf/IdASM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\knockout-2.2.0.js" size="40956">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bm6gkSPfJHNV/RtCQ3UHQ7yx6uI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Scripts\modernizr-2.6.2.js" size="51537">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>S76YPuX2BHW00wKNowyLPAI9cDQ=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="f1s_32.ico" size="61798">
     <hash>
       <dsig:Transforms>
@@ -85,6 +262,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>BST7vCRoGWpdqNZRyQvjRIxNPk8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="F1Speed.exe.config" size="197">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Jn3ewOWJtlYIRGXBzSib6QAr40c=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

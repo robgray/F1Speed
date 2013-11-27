@@ -76,7 +76,7 @@ namespace F1Speed
 
             cboField.SelectedIndex = 0; // default to first item
 
-            manager.CircuitChanged += (s, e) => UpdateCircuitName(e.CircuitName, e.LapType);
+            manager.CircuitChanged += (s, e) => UpdateCircuitName(e.CircuitName, e.LapType);            
 
 #if DEBUG
             this.Height = 980;
@@ -90,7 +90,10 @@ namespace F1Speed
             manager.PacketProcessed += (s, e) => writeLog(string.Format("Packet: {0}", e.Packet));
             
 #else
-            this.Height = 490;
+            this.Height = 670;
+            cboField.Visible = false;
+            label8.Visible = false;
+            LogBox.Visible = false;
 #endif
                 
             writeLog("Listing on port " + PORTNUM + " for connections from " +
@@ -122,7 +125,7 @@ namespace F1Speed
                 // throw;
             }
         }
-
+        
         void grpBox_Paint(object sender, PaintEventArgs e)
         {
             var box = sender as GroupBox;
@@ -204,11 +207,13 @@ namespace F1Speed
             ComparisonModeLabel.Text = manager.ComparisonMode == ComparisonModeEnum.Reference ? "Reference Lap" : "Fastest Lap";
             ComparisonLapLabel.Text = manager.ComparisonLapTime;
             CurrentLapLabel.Text = manager.CurrentLapTime;
-            AverageLapLabel.Text = manager.AverageLapTime;
+            LastLapLabel.Text = manager.LastLapTime;
 
             UpdateTimeDelta(manager.GetTimeDelta());
             UpdateThrottleBrake(manager.CurrentThrottle, manager.CurrentBrake);
             UpdateWheelSpin(manager.CurrentWheelSpin(WheelspinWheel.FrontLeft), manager.CurrentWheelSpin(WheelspinWheel.FrontRight), manager.CurrentWheelSpin(WheelspinWheel.RearLeft), manager.CurrentWheelSpin(WheelspinWheel.RearRight));
+            
+            UpdateSectors();
 
             TransmissionLabel.BackColor = Color.Transparent;
 
@@ -222,6 +227,94 @@ namespace F1Speed
             timer1.Start();
         }
 
+        public void UpdateSectors()
+        {             
+            SetSector1Time(manager.Sector1.FastestTime, manager.Sector1.CurrentTime, manager.Sector1.DeltaTime);            
+            SetSector2Time(manager.Sector2.FastestTime, manager.Sector2.CurrentTime, manager.Sector2.DeltaTime);            
+            SetSector3Time(manager.Sector3.FastestTime, manager.Sector3.CurrentTime, manager.Sector3.DeltaTime);                        
+        }
+
+        public void SetSector1Time(float fastest, float current, float delta)
+        {            
+            // negative time means a new fastest sector!            
+            var newLapIsFaster = current < fastest;
+            var foreColor = newLapIsFaster ? Color.Green : Color.Red;
+
+            Sector1DeltaSplit.Text = delta.AsGapString(true);
+            Sector1CurrentSplit.Text = current.AsTimeString(true);
+            Sector1FastestSplit.Text = fastest.AsTimeString(true);
+
+            Sector1Label.ForeColor = foreColor;
+            Sector1CurrentSplit.ForeColor = foreColor;
+            Sector1DeltaSplit.ForeColor = foreColor;
+            Sector1FastestSplit.ForeColor = foreColor;
+        }
+
+        public void SetSector2Time(float fastest, float current, float delta)
+        {
+            // negative time means a new fastest sector!            
+            var newLapIsFaster = current < fastest;
+            var foreColor = newLapIsFaster ? Color.Green : Color.Red;
+
+            Sector2DeltaSplit.Text = delta.AsGapString(true);
+            Sector2CurrentSplit.Text = current.AsTimeString(true);
+            Sector2FastestSplit.Text = fastest.AsTimeString(true);
+
+            Sector2Label.ForeColor = foreColor;
+            Sector2CurrentSplit.ForeColor = foreColor;
+            Sector2DeltaSplit.ForeColor = foreColor;
+            Sector2FastestSplit.ForeColor = foreColor;
+        }
+
+        public void SetSector3Time(float fastest, float current, float delta)
+        {
+            // negative time means a new fastest sector!            
+            var newLapIsFaster = current < fastest;
+            var foreColor = newLapIsFaster ? Color.Green : Color.Red;
+
+            Sector3DeltaSplit.Text = delta.AsGapString(true);
+            Sector3CurrentSplit.Text = current.AsTimeString(true);
+            Sector3FastestSplit.Text = fastest.AsTimeString(true);
+
+            Sector3Label.ForeColor = foreColor;
+            Sector3CurrentSplit.ForeColor = foreColor;
+            Sector3DeltaSplit.ForeColor = foreColor;
+            Sector3FastestSplit.ForeColor = foreColor;
+        }
+
+        public void ResetSectorTiming()
+        {
+            var foreColor = Color.White;
+
+            Sector1Label.ForeColor = foreColor;
+            Sector1CurrentSplit.ForeColor = foreColor;
+            Sector1DeltaSplit.ForeColor = foreColor;
+            Sector1FastestSplit.ForeColor = foreColor;
+
+            Sector2Label.ForeColor = foreColor;
+            Sector2CurrentSplit.ForeColor = foreColor;
+            Sector2DeltaSplit.ForeColor = foreColor;
+            Sector2FastestSplit.ForeColor = foreColor;
+
+            Sector3Label.ForeColor = foreColor;
+            Sector3CurrentSplit.ForeColor = foreColor;
+            Sector3DeltaSplit.ForeColor = foreColor;
+            Sector3FastestSplit.ForeColor = foreColor;
+
+            Sector1CurrentSplit.Text = 0f.AsGapString(true);
+            Sector1DeltaSplit.Text = "";
+            Sector1FastestSplit.Text = 0f.AsGapString(true);
+
+            Sector2CurrentSplit.Text = 0f.AsGapString(true);
+            Sector2DeltaSplit.Text = "";
+            Sector2FastestSplit.Text = 0f.AsGapString(true);
+
+            Sector3CurrentSplit.Text = 0f.AsGapString(true);
+            Sector3DeltaSplit.Text = "";
+            Sector3FastestSplit.Text = 0f.AsGapString(true);
+        }
+
+       
         private void UpdateThrottleBrake(float throttle, float brake)
         {
             const float MaxHeight = 75;
@@ -231,6 +324,13 @@ namespace F1Speed
 
             BrakeBar.Location = new Point(21, 81 - BrakeBar.Height);
             ThrottleBar.Location = new Point(88, 81 - ThrottleBar.Height);
+
+            if (brake > 0.99)
+            {
+                BrakeBar.BackColor = Color.White;
+            }
+            else
+                BrakeBar.BackColor = Color.Red;
         }
 
         private void UpdateWheelSpin(float fl, float fr, float rl, float rr)

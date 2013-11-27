@@ -77,7 +77,10 @@ namespace F1Speed.Core
             CompletedLapsInRace = info.GetValue<float>("CompletedLapsInRace");
             TotalLapsInRace = info.GetValue<float>("TotalLapsInRace");
             TrackLength = info.GetValue<float>("TrackLength");
-            PreviousLapTime = info.GetValue<float>("PreviousLapTime");            
+            PreviousLapTime = info.GetValue<float>("PreviousLapTime");
+            NewField26 = info.GetValue<float>("NewField26");
+            NewField27 = info.GetValue<float>("NewField27");
+            NewField28 = info.GetValue<float>("NewField28");
         }
 
         public float Time;
@@ -203,6 +206,15 @@ namespace F1Speed.Core
         [XmlIgnore]
         public float PreviousLapTime;    // Lap time of previous lap
 
+        //  The next three fields are new for F1 2013
+
+        [XmlIgnore]
+        public float NewField26;    // Always 0?
+        [XmlIgnore]
+        public float NewField27;    // Always 0?
+        [XmlIgnore]
+        public float NewField28;    // Always 0?
+
         /* End new Fields */
 
         [XmlIgnore]
@@ -321,6 +333,9 @@ namespace F1Speed.Core
             info.AddValue("TotalLapsInRace", TotalLapsInRace);
             info.AddValue("TrackLength", TrackLength);
             info.AddValue("PreviousLapTime", PreviousLapTime);
+            info.AddValue("NewField26", NewField26);
+            info.AddValue("NewField27", NewField27);
+            info.AddValue("NewField28", NewField28);
         }
     }
 }

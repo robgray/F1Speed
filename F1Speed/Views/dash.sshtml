@@ -55,8 +55,147 @@
 		<div class="row-fluid">
 			<div class="span12">			
 				<h4>Time Delta</h4>
-				<div data-bind="timeDelta: timeDelta, css: timebarCss"></div>
-				<label data-bind="text: timeDisplay, css: timeClass" class="time-delta"></label>
+				<table style="width:100%">
+					<tr class="tabletimebar">
+						<td style="width: 50%">
+							<table style="width:100%">
+								<tr>
+									<td data-bind="attr: { style: negativeTimeStyle }"></td>
+									<td data-bind="attr: { style: inverseNegativeTimeStyle }"></td>
+								</tr>
+							</table>
+						</td>
+						<td style="width: 50%">
+							<table style="width: 100%">
+							<tr>
+								<td data-bind="attr: { style: positiveTimeStyle }"></td>
+								<td data-bind="attr: { style: inversePositiveTimeStyle }"></td>
+							</tr>
+						</table>	
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<label data-bind="text: timeDisplay, css: timeClass" class="time-delta"></label>
+						<td>
+					<tr>
+				</table>																								
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span1">
+				<div class="row-fluid">
+					<div class="span12">
+						<label></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="attr: { style: sector1Style }">Sector 1</label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="attr: { style: sector2Style }">Sector 2</label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="attr: { style: sector3Style }">Sector 3</label>
+					</div>
+				</div>
+			</div>
+			<div class="span1">
+				<div class="row-fluid">
+					<div class="span12">
+						<label>Current</label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector1Current, attr: { style: sector1Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector2Current, attr: { style: sector2Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector3Current, attr: { style: sector3Style }"></label>
+					</div>
+				</div>
+			</div>
+			<div class="span1">
+				<div class="row-fluid">
+					<div class="span12">
+						<label>Delta</label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector1Delta, attr: { style: sector1Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector2Delta, attr: { style: sector2Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector3Delta, attr: { style: sector3Style }"></label>
+					</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="row-fluid">
+					<div class="span12">
+						<label>Fastest</label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector1Fastest, attr: { style: sector1Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector2Fastest, attr: { style: sector2Style }"></label>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<label data-bind="text: sector3Fastest, attr: { style: sector3Style }"></label>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="row-fluid">
+					<div class="span6">
+						<h3>Fastest Lap</h3>	
+					</div>
+					<div class="span6">
+						<h3 data-bind="text: fastestLap"></h3>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<h3>Last Lap</h3>	
+					</div>
+					<div class="span6">
+						<h3 data-bind="text: lastLap"></h3>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<h3>Current Lap</h3>	
+					</div>
+					<div class="span6">
+						<h3 data-bind="text: currentLap"></h3>
+					</div>
+				</div>				
 			</div>
 		</div>
 	</div>

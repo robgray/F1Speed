@@ -52,6 +52,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="F1SpeedSettings.cs" />
     <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="ISectorTiming.cs" />
     <Compile Include="LapEventArgs.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="PacketEventArgs.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="Repositories\ITelemetryLapRepository.cs" />
     <Compile Include="PacketUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectorChangedEventArgs.cs" />
+    <Compile Include="SectorTiming.cs" />
     <Compile Include="TelemetryLap.cs" />
     <Compile Include="TelemetryLapManager.cs" />
     <Compile Include="Repositories\TelemetryLapRepository.cs" />

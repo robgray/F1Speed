@@ -24,7 +24,7 @@ ko.bindingHandlers.pedal = {
         var $wheelspin = $(element);
         var spinValue = ko.utils.unwrapObservable(valueAccessor());
 
-        var maxHeight = 45;
+        var maxHeight = 80;
 
         $wheelspin.height(Math.floor(maxHeight * spinValue));
     }

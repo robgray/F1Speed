@@ -5,6 +5,7 @@ using System.Text;
 using F1Speed.Core;
 using F1Speed.Models;
 using Nancy;
+using F1Speed.Core;
 
 namespace F1Speed.Modules
 {
@@ -32,7 +33,7 @@ namespace F1Speed.Modules
                     var model = new DashViewModel
                         {
                             CircuitName = _telemetryLapManager.Circuit.Name, 
-                            LapType = _telemetryLapManager.LapType,
+                            LapType = _telemetryLapManager.LapType ?? "",
                             SpeedDelta = float.Parse(speedAbs),
                             TimeDelta = timeDelta,
                             IsSpeedDeltaPositive = speedPositive,
@@ -42,8 +43,22 @@ namespace F1Speed.Modules
                             WheelspinFrontLeft = _telemetryLapManager.CurrentWheelSpin(WheelspinWheel.FrontLeft),
                             WheelspinFrontRight = _telemetryLapManager.CurrentWheelSpin(WheelspinWheel.FrontRight),
                             Throttle = _telemetryLapManager.CurrentThrottle,
-                            Brake = _telemetryLapManager.CurrentBrake
+                            Brake = _telemetryLapManager.CurrentBrake,                            
+                            CurrentLap = _telemetryLapManager.CurrentLapTime,
+                            LastLap = _telemetryLapManager.LastLapTime,
+                            Sector1 = new SectorTimeViewModel(_telemetryLapManager.Sector1),
+                            Sector2 = new SectorTimeViewModel(_telemetryLapManager.Sector2),
+                            Sector3 = new SectorTimeViewModel(_telemetryLapManager.Sector3)                                
                         };
+
+                    if (_telemetryLapManager.FastestLap == null)
+                    {
+                        model.FastestLap = 0f.AsTimeString();
+                    }
+                    else
+                    {
+                        model.FastestLap = _telemetryLapManager.FastestLap.LapTime.AsTimeString();
+                    }
                     
                     return Response.AsJson(model);
                 };
