@@ -447,7 +447,7 @@ namespace F1Speed
         private void UpdateFuelStatus()
         {
             lastLapFuelUsed = lastLapFuelRemaining - manager.LastLapFuel;
-            fuelTarget = Convert.ToSingle(manager.GetCurrentData("FuelRemaining")) / manager.LapsRemaining;
+            fuelTarget = (Convert.ToSingle(manager.GetCurrentData("FuelRemaining")) - 1) / manager.LapsRemaining;
             lastLapFuelRemaining = manager.LastLapFuel;
         }
 
