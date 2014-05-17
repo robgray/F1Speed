@@ -529,6 +529,17 @@ namespace F1Speed.Core
         {
             get { return _lastLapFuel; }
         }
+
+        public int LapsRemaining
+        {
+            get
+            {
+                int totalLaps = (int)LatestPacket.TotalLapsInRace;
+                int completedLaps = (int)LatestPacket.CompletedLapsInRace;
+                return totalLaps - completedLaps;
+            }
+        }
+
         public void ClearReferenceLap()
         {
             SetReferenceLap(null);
