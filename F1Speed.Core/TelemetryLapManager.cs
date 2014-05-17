@@ -49,6 +49,7 @@ namespace F1Speed.Core
         public event LapEventHandler StartedOutLap;
         public event LapEventHandler FinishedOutLap;
         public event LapEventHandler RemovedLap;
+        public event LapEventHandler StartedLap;
         public event PacketEventHandler PacketProcessed;
         public event CircuitChangedEventHandler CircuitChanged;
         public event SectorChangedEventHandler SectorChanged;
@@ -64,6 +65,12 @@ namespace F1Speed.Core
 
             if (PacketProcessed != null)
                 PacketProcessed(this, new PacketEventArgs { Packet = packet });
+        }
+
+        protected void OnStartedLap(TelemetryLap lap)
+        {
+            if (StartedLap != null)
+                StartedLap(this, new LapEventArgs { Lap = lap });
         }
 
         protected void OnRemovedLap(TelemetryLap lap)
@@ -307,9 +314,13 @@ namespace F1Speed.Core
 
                     // Start new current lap
                     _laps.Add(new TelemetryLap(_currectCircuit, _lapType));
+                    CurrentLap.AddPacket(packet);
+                    OnStartedLap(CurrentLap);
                 }
-
-                CurrentLap.AddPacket(packet);
+                else
+                {
+                    CurrentLap.AddPacket(packet);
+                }
             }  // end lock
         }
 
