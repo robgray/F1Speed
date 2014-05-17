@@ -34,6 +34,7 @@ namespace F1Speed.Core
         private readonly static ILog logger = Logger.Create();
 
         private float _lastLapTime = 0;
+        private float _lastLapFuel = 0;
 
         private Circuit _currectCircuit = Circuit.NullCircuit;
         private string _lapType;
@@ -265,6 +266,7 @@ namespace F1Speed.Core
                     if (!packet.IsInPitLane)
                     {
                         _lastLapTime = packet.PreviousLapTime;
+                        _lastLapFuel = packet.FuelRemaining;
                         CurrentLap.MarkLapCompleted();
                     }
                     else
@@ -512,6 +514,10 @@ namespace F1Speed.Core
             get { return _lastLapTime.AsTimeString(); }
         }
 
+        public float LastLapFuel
+        {
+            get { return _lastLapFuel; }
+        }
         public void ClearReferenceLap()
         {
             SetReferenceLap(null);
