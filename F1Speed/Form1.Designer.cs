@@ -97,8 +97,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.consumedFuelLabel = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.lapsRemainingLabel = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.targetFuelLabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.fuelRemainingLabel = new System.Windows.Forms.Label();
@@ -778,27 +776,25 @@
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.consumedFuelLabel);
             this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.lapsRemainingLabel);
-            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.targetFuelLabel);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.fuelRemainingLabel);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Location = new System.Drawing.Point(524, 438);
+            this.groupBox3.Location = new System.Drawing.Point(586, 438);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(399, 140);
+            this.groupBox3.Size = new System.Drawing.Size(337, 140);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
             // consumedFuelLabel
             // 
             this.consumedFuelLabel.AutoSize = true;
-            this.consumedFuelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consumedFuelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consumedFuelLabel.ForeColor = System.Drawing.Color.White;
-            this.consumedFuelLabel.Location = new System.Drawing.Point(293, 92);
-            this.consumedFuelLabel.MinimumSize = new System.Drawing.Size(80, 0);
+            this.consumedFuelLabel.Location = new System.Drawing.Point(212, 96);
+            this.consumedFuelLabel.MinimumSize = new System.Drawing.Size(120, 40);
             this.consumedFuelLabel.Name = "consumedFuelLabel";
-            this.consumedFuelLabel.Size = new System.Drawing.Size(80, 25);
+            this.consumedFuelLabel.Size = new System.Drawing.Size(120, 40);
             this.consumedFuelLabel.TabIndex = 11;
             this.consumedFuelLabel.Text = "9.99";
             this.consumedFuelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -808,49 +804,23 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(6, 94);
-            this.label21.MinimumSize = new System.Drawing.Size(200, 0);
+            this.label21.Location = new System.Drawing.Point(6, 96);
+            this.label21.MinimumSize = new System.Drawing.Size(200, 40);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(206, 26);
+            this.label21.Size = new System.Drawing.Size(206, 40);
             this.label21.TabIndex = 10;
             this.label21.Text = "Fuel Used Last Lap:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lapsRemainingLabel
-            // 
-            this.lapsRemainingLabel.AutoSize = true;
-            this.lapsRemainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lapsRemainingLabel.ForeColor = System.Drawing.Color.White;
-            this.lapsRemainingLabel.Location = new System.Drawing.Point(293, 41);
-            this.lapsRemainingLabel.MinimumSize = new System.Drawing.Size(80, 0);
-            this.lapsRemainingLabel.Name = "lapsRemainingLabel";
-            this.lapsRemainingLabel.Size = new System.Drawing.Size(80, 25);
-            this.lapsRemainingLabel.TabIndex = 9;
-            this.lapsRemainingLabel.Text = "99";
-            this.lapsRemainingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(6, 42);
-            this.label15.MinimumSize = new System.Drawing.Size(200, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(200, 26);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Laps Remaining:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // targetFuelLabel
             // 
             this.targetFuelLabel.AutoSize = true;
-            this.targetFuelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.targetFuelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.targetFuelLabel.ForeColor = System.Drawing.Color.White;
-            this.targetFuelLabel.Location = new System.Drawing.Point(293, 66);
-            this.targetFuelLabel.MinimumSize = new System.Drawing.Size(80, 0);
+            this.targetFuelLabel.Location = new System.Drawing.Point(212, 53);
+            this.targetFuelLabel.MinimumSize = new System.Drawing.Size(120, 40);
             this.targetFuelLabel.Name = "targetFuelLabel";
-            this.targetFuelLabel.Size = new System.Drawing.Size(80, 25);
+            this.targetFuelLabel.Size = new System.Drawing.Size(120, 40);
             this.targetFuelLabel.TabIndex = 7;
             this.targetFuelLabel.Text = "9.99";
             this.targetFuelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -860,10 +830,10 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(6, 68);
-            this.label17.MinimumSize = new System.Drawing.Size(200, 0);
+            this.label17.Location = new System.Drawing.Point(6, 53);
+            this.label17.MinimumSize = new System.Drawing.Size(200, 40);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(200, 26);
+            this.label17.Size = new System.Drawing.Size(200, 40);
             this.label17.TabIndex = 6;
             this.label17.Text = "Target Fuel Usage:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -871,12 +841,12 @@
             // fuelRemainingLabel
             // 
             this.fuelRemainingLabel.AutoSize = true;
-            this.fuelRemainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fuelRemainingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fuelRemainingLabel.ForeColor = System.Drawing.Color.White;
-            this.fuelRemainingLabel.Location = new System.Drawing.Point(293, 16);
-            this.fuelRemainingLabel.MinimumSize = new System.Drawing.Size(80, 0);
+            this.fuelRemainingLabel.Location = new System.Drawing.Point(212, 13);
+            this.fuelRemainingLabel.MinimumSize = new System.Drawing.Size(120, 40);
             this.fuelRemainingLabel.Name = "fuelRemainingLabel";
-            this.fuelRemainingLabel.Size = new System.Drawing.Size(80, 25);
+            this.fuelRemainingLabel.Size = new System.Drawing.Size(120, 40);
             this.fuelRemainingLabel.TabIndex = 5;
             this.fuelRemainingLabel.Text = "100.00";
             this.fuelRemainingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -886,10 +856,10 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(6, 16);
-            this.label19.MinimumSize = new System.Drawing.Size(200, 0);
+            this.label19.Location = new System.Drawing.Point(6, 13);
+            this.label19.MinimumSize = new System.Drawing.Size(200, 40);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(200, 26);
+            this.label19.Size = new System.Drawing.Size(200, 40);
             this.label19.TabIndex = 4;
             this.label19.Text = "Fuel Remaining:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1024,8 +994,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label consumedFuelLabel;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label lapsRemainingLabel;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label targetFuelLabel;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label fuelRemainingLabel;

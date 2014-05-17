@@ -227,14 +227,6 @@ namespace F1Speed
                 fuelRemainingLabel.Text = "-";
                 consumedFuelLabel.Text = "-";
             }
-            int totalLaps = Convert.ToInt32(manager.GetCurrentData("TotalLapsInRace"));
-            int lapsRemaining = manager.LapsRemaining;
-
-            if (totalLaps > 0) {
-                lapsRemainingLabel.Text = lapsRemaining.ToString();
-            } else {
-                lapsRemainingLabel.Text = "-";
-            }
 
             if (fuelTarget > 0.2) {
                 targetFuelLabel.Text = fuelTarget.ToString("0.00");
