@@ -460,7 +460,13 @@ namespace F1Speed.Core
                 if (FastestLap == null)                
                     return new SectorTiming(0,0);
                 
-                return new SectorTiming(CurrentLap.Sector1Time, FastestLap.Sector1Time);                                
+                if (CurrentLap.CurrentSector > 1)
+                    return new SectorTiming(CurrentLap.Sector1Time, FastestLap.Sector1Time);
+
+                if (PreviousLapSectorInformation == null)
+                    return new SectorTiming(0, FastestLap.Sector1Time);
+
+                return new SectorTiming(PreviousLapSectorInformation.Sector1Time, FastestLap.Sector1Time);
             }
         }
 
@@ -471,11 +477,11 @@ namespace F1Speed.Core
                 if (FastestLap == null)
                     return new SectorTiming(0, 0);
 
-                if (CurrentLap.CurrentSector >= 2)   
+                if (CurrentLap.CurrentSector > 2)   
                     return new SectorTiming(CurrentLap.Sector2Time, FastestLap.Sector2Time);
 
                 if (PreviousLapSectorInformation == null)
-                    return new SectorTiming(0, 0);       
+                    return new SectorTiming(0, FastestLap.Sector2Time);       
          
                 return new SectorTiming(PreviousLapSectorInformation.Sector2Time, FastestLap.Sector2Time);
             }
@@ -490,9 +496,7 @@ namespace F1Speed.Core
                 if (PreviousLapSectorInformation == null)
                     return new SectorTiming(0, FastestLap.Sector3Time);
 
-                if (CurrentLap.CurrentSector < 3)
-                    return new SectorTiming(PreviousLapSectorInformation.Sector3Time, FastestLap.Sector3Time);
-                return new SectorTiming(CurrentLap.Sector3Time, FastestLap.Sector3Time);
+                return new SectorTiming(PreviousLapSectorInformation.Sector3Time, FastestLap.Sector3Time);
             }
         }
 
