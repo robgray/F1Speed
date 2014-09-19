@@ -50,6 +50,10 @@ namespace F1Speed
 
         private TelemetryLapManager manager;
 
+        private float lastLapFuelRemaining = 0;
+        private float lastLapFuelUsed = 0;
+        private float fuelTarget = 0;
+
         static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         const UInt32 SWP_NOSIZE = 0x0001;
         const UInt32 SWP_NOMOVE = 0x0002;
@@ -76,10 +80,11 @@ namespace F1Speed
 
             cboField.SelectedIndex = 0; // default to first item
 
-            manager.CircuitChanged += (s, e) => UpdateCircuitName(e.CircuitName, e.LapType);            
+            manager.CircuitChanged += (s, e) => UpdateCircuitName(e.CircuitName, e.LapType);
+            manager.StartedLap += (s, e) => UpdateFuelStatus();
 
 #if DEBUG
-            this.Height = 980;
+            this.Height = 800;
 
             manager.CompletedFullLap += (s, e) => writeLog(string.Format("Completed Full Lap.  Last={0}...Current={1}", e.PreviousLapNumber, e.CurrentLapNumber));
             manager.RemovedLap += (s, e) => writeLog(string.Format("Removed Lap. Number={0}", e.Lap != null ? e.Lap.LapNumber : -1));
@@ -208,6 +213,27 @@ namespace F1Speed
             ComparisonLapLabel.Text = manager.ComparisonLapTime;
             CurrentLapLabel.Text = manager.CurrentLapTime;
             LastLapLabel.Text = manager.LastLapTime;
+
+            float fuelRemaining = Convert.ToSingle(manager.GetCurrentData("FuelRemaining"));
+
+            if (fuelRemaining > 0) {
+                fuelRemainingLabel.Text = fuelRemaining.ToString("0.00");
+                if (lastLapFuelUsed > 0) {
+                    consumedFuelLabel.Text = lastLapFuelUsed.ToString("0.00");
+                } else {
+                    consumedFuelLabel.Text = "-";
+                }
+            } else {
+                fuelRemainingLabel.Text = "-";
+                consumedFuelLabel.Text = "-";
+            }
+
+            if (fuelTarget > 0.2) {
+                targetFuelLabel.Text = fuelTarget.ToString("0.00");
+            } else {
+                targetFuelLabel.Text = "-";
+            }
+
 
             UpdateTimeDelta(manager.GetTimeDelta());
             UpdateThrottleBrake(manager.CurrentThrottle, manager.CurrentBrake);
@@ -418,6 +444,13 @@ namespace F1Speed
             }
         }
 
+        private void UpdateFuelStatus()
+        {
+            lastLapFuelUsed = lastLapFuelRemaining - manager.LastLapFuel;
+            fuelTarget = (Convert.ToSingle(manager.GetCurrentData("FuelRemaining")) - 1) / manager.LapsRemaining;
+            lastLapFuelRemaining = manager.LastLapFuel;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             var version = Application.ProductVersion;
@@ -542,7 +575,6 @@ namespace F1Speed
             var optionsForm = new OptionsForm();
             optionsForm.ShowDialog(this);
         }
-
       
     }
 }

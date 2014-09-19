@@ -34,6 +34,7 @@ namespace F1Speed.Core
         private readonly static ILog logger = Logger.Create();
 
         private float _lastLapTime = 0;
+        private float _lastLapFuel = 0;
 
         private Circuit _currectCircuit = Circuit.NullCircuit;
         private string _lapType;
@@ -48,6 +49,7 @@ namespace F1Speed.Core
         public event LapEventHandler StartedOutLap;
         public event LapEventHandler FinishedOutLap;
         public event LapEventHandler RemovedLap;
+        public event LapEventHandler StartedLap;
         public event PacketEventHandler PacketProcessed;
         public event CircuitChangedEventHandler CircuitChanged;
         public event SectorChangedEventHandler SectorChanged;
@@ -63,6 +65,12 @@ namespace F1Speed.Core
 
             if (PacketProcessed != null)
                 PacketProcessed(this, new PacketEventArgs { Packet = packet });
+        }
+
+        protected void OnStartedLap(TelemetryLap lap)
+        {
+            if (StartedLap != null)
+                StartedLap(this, new LapEventArgs { Lap = lap });
         }
 
         protected void OnRemovedLap(TelemetryLap lap)
@@ -265,6 +273,7 @@ namespace F1Speed.Core
                     if (!packet.IsInPitLane)
                     {
                         _lastLapTime = packet.PreviousLapTime;
+                        _lastLapFuel = packet.FuelRemaining;
                         CurrentLap.MarkLapCompleted();
                     }
                     else
@@ -305,9 +314,13 @@ namespace F1Speed.Core
 
                     // Start new current lap
                     _laps.Add(new TelemetryLap(_currectCircuit, _lapType));
+                    CurrentLap.AddPacket(packet);
+                    OnStartedLap(CurrentLap);
                 }
-
-                CurrentLap.AddPacket(packet);
+                else
+                {
+                    CurrentLap.AddPacket(packet);
+                }
             }  // end lock
         }
 
@@ -510,6 +523,21 @@ namespace F1Speed.Core
         public string LastLapTime
         {
             get { return _lastLapTime.AsTimeString(); }
+        }
+
+        public float LastLapFuel
+        {
+            get { return _lastLapFuel; }
+        }
+
+        public int LapsRemaining
+        {
+            get
+            {
+                int totalLaps = (int)LatestPacket.TotalLapsInRace;
+                int completedLaps = (int)LatestPacket.CompletedLapsInRace;
+                return totalLaps - completedLaps;
+            }
         }
 
         public void ClearReferenceLap()
