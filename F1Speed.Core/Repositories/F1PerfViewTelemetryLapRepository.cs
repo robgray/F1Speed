@@ -22,8 +22,6 @@ namespace F1Speed.Core.Repositories
             fileSystem = fileSystemFacade;  
         }
 
-        public static IDictionary<string, string> Tracks = CircuitRepository.GetAll().ToDictionary(x => x.Name, x => x.Order.ToString());
-
         public void Save(TelemetryLap lap)
         {
             try
@@ -92,7 +90,7 @@ namespace F1Speed.Core.Repositories
 
         private string GetTrackNumber(TelemetryLap lap)
         {
-            return Tracks[lap.CircuitName];
+            return lap.Circuit.Order.ToString();
         }
 
         private IEnumerable<string> GetPacketData(TelemetryLap lap)
